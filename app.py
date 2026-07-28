@@ -134,3 +134,35 @@ chatbot.launch()
 
 # TODO: This is just a starting point! Customize the system prompt,
 # the model, and the interface to make this project your own!
+
+# YOUR STYLES & PALETTE (Define your custom CSS here)
+my_custom_css = """
+body, .gradio-container { background-color: #FFDAA2 !important; }
+[data-testid="user"] { background-color: #A8FF70 !important; color: #092E00 !important; }
+[data-testid="bot"]  { background-color: #FFB8E7 !important; color: #092E00 !important; }
+button.primary       { background-color: #00883E !important; }
+"""
+
+
+# 3. YOUR LOGIC / BOT FUNCTION (Whatever python code generates your responses)
+def my_bot_logic(message, history):
+    return "Hello! I am your custom bot."
+
+
+# 4. YOUR GRADIO INTERFACE (Pass the css parameter to gr.Blocks)
+with gr.Blocks(css=my_custom_css) as demo:
+    
+    # Add your Logo & Title
+    gr.HTML("""
+        <div style="text-align: center;">
+            <img src="https://em-content.zobj.net/source/apple/354/sparkles_2728.png" width="60">
+            <h1 style="color: #092E00;">My Custom Bot</h1>
+        </div>
+    """)
+    
+    # Add your Chat interface
+    gr.ChatInterface(fn=my_bot_logic)
+
+
+# 5. LAUNCH
+demo.launch()
