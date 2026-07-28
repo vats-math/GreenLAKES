@@ -13,7 +13,7 @@ body, gradio-app, .main, div.gradio-container {
     color: #092E00 !important;
 }
 .bot-row .message, div[data-testid="bot-message"] {
-    background-color: #FFB8E7 !important;
+    background-color: #092e00 !important;
     color: #092E00 !important;
 }
 button#submit-btn, button.primary {
