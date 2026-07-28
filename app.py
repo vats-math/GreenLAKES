@@ -3,6 +3,14 @@ from huggingface_hub import InferenceClient
 from sentence_transformers import SentenceTransformer
 import torch
 
+# Open the water_cycle.txt file in read mode with UTF-8 encoding
+with open("sample_data/ai_ethics.txt", "r", encoding="utf-8") as file:
+  # Read the entire contents of the file and store it in a variable
+  ai_article = file.read()
+
+# Print the text below
+print(ai_article)
+
 # This is the same pattern from the Generative AI lesson! It uses the
 # Inference Provider API to send your messages to an AI model and get
 # a response back. Swap out the model below for a different one if
