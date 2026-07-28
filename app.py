@@ -5,24 +5,17 @@ import torch
 
 # COLORS FIRST
 my_custom_css = """
-/* 1. App background (Peach Fuzz) */
 body, gradio-app, .main, div.gradio-container {
     background-color: #FFDAA2 !important;
 }
-
-/* 2. User Message Bubbles (Lime) */
 .user-row .message, div[data-testid="user-message"] {
     background-color: #A8FF70 !important;
     color: #092E00 !important;
 }
-
-/* 3. Bot Message Bubbles (Pretty Pink) */
 .bot-row .message, div[data-testid="bot-message"] {
     background-color: #FFB8E7 !important;
     color: #092E00 !important;
 }
-
-/* 4. Send Button (Avocado) */
 button#submit-btn, button.primary {
     background-color: #00883E !important;
     color: white !important;
@@ -153,7 +146,7 @@ def respond(message, history):
 
     return response.choices[0].message.content.strip()
 
-chatbot = gr.ChatInterface(respond)
+chatbot = gr.ChatInterface(fn=respond, css=my_custom_css)
 
 chatbot.launch()
 
