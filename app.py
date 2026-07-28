@@ -3,6 +3,32 @@ from huggingface_hub import InferenceClient
 from sentence_transformers import SentenceTransformer
 import torch
 
+# COLORS FIRST
+my_custom_css = """
+/* 1. App background (Peach Fuzz) */
+body, gradio-app, .main, div.gradio-container {
+    background-color: #FFDAA2 !important;
+}
+
+/* 2. User Message Bubbles (Lime) */
+.user-row .message, div[data-testid="user-message"] {
+    background-color: #A8FF70 !important;
+    color: #092E00 !important;
+}
+
+/* 3. Bot Message Bubbles (Pretty Pink) */
+.bot-row .message, div[data-testid="bot-message"] {
+    background-color: #FFB8E7 !important;
+    color: #092E00 !important;
+}
+
+/* 4. Send Button (Avocado) */
+button#submit-btn, button.primary {
+    background-color: #00883E !important;
+    color: white !important;
+}
+"""
+
 # Open the knowledge.txt file in read mode with UTF-8 encoding
 with open("knowledge.txt", "r", encoding="utf-8") as file:
   # Read the entire contents of the file and store it in a variable
@@ -135,34 +161,10 @@ chatbot.launch()
 # TODO: This is just a starting point! Customize the system prompt,
 # the model, and the interface to make this project your own!
 
-# YOUR STYLES & PALETTE (Define your custom CSS here)
-my_custom_css = """
-body, .gradio-container { background-color: #FFDAA2 !important; }
-[data-testid="user"] { background-color: #A8FF70 !important; color: #092E00 !important; }
-[data-testid="bot"]  { background-color: #FFB8E7 !important; color: #092E00 !important; }
-button.primary       { background-color: #00883E !important; }
-"""
+import gradio as gr
 
 
-# 3. YOUR LOGIC / BOT FUNCTION (Whatever python code generates your responses)
-def my_bot_logic(message, history):
-    return "Hello! I am your custom bot."
-
-
-# 4. YOUR GRADIO INTERFACE (Pass the css parameter to gr.Blocks)
+# 2. USE IT IN YOUR BLOCKS AFTER IT'S DEFINED
 with gr.Blocks(css=my_custom_css) as demo:
-    
-    # Add your Logo & Title
-    gr.HTML("""
-        <div style="text-align: center;">
-            <img src="https://em-content.zobj.net/source/apple/354/sparkles_2728.png" width="60">
-            <h1 style="color: #092E00;">My Custom Bot</h1>
-        </div>
-    """)
-    
-    # Add your Chat interface
-    gr.ChatInterface(fn=my_bot_logic)
-
-
-# 5. LAUNCH
-demo.launch()
+    # Your HTML header / logo / ChatInterface code goes inside here!
+    pass
