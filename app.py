@@ -1,4 +1,5 @@
 import gradio as gr
+from faster_whisper import WhisperModel
 from huggingface_hub import InferenceClient
 from sentence_transformers import SentenceTransformer
 import torch
@@ -71,6 +72,8 @@ p{
     color:#264D35;
 }
 """
+# Load text to speech model
+whisper = WhisperModel("base")
 
 # Open the knowledge.txt file in read mode with UTF-8 encoding
 with open("knowledge.txt", "r", encoding="utf-8") as file:
@@ -210,7 +213,98 @@ def respond(message, history):
 
     return response.choices[0].message.content.strip()
 
+
+# VOICE CHAT
+def transcribe(audio_file):
+    """
+    Converts microphone recording
+    into text.
+    """
+
+    segments, info = whisper_model.transcribe(
+        audio_file
+    )
+
+
+    text = ""
+
+    for segment in segments:
+        text += segment.text
+
+
+    return text.strip()
+
+def voice_chat(audio_file, history):
+    """
+    Handles microphone input.
+    """
+
+    # Audio -> text
+    user_message = transcribe(
+        audio_file
+    )
+
+
+    # Text -> chatbot
+    answer = respond(
+        user_message,
+        history
+    )
+
+    # Update conversation
+    history = history + [
+        {
+            "role": "user",
+            "content": user_message
+        },
+        {
+            "role": "assistant",
+            "content": answer
+        }
+    ]
+
+
+    return history, history
+
+    def text_chat(message, history):
+    """
+    Handles normal typing.
+    """
+
+    answer = respond(
+        message,
+        history
+    )
+
+
+    history = history + [
+        {
+            "role": "user",
+            "content": message
+        },
+        {
+            "role": "assistant",
+            "content": answer
+        }
+    ]
+
+
+    return history, history, ""
+
+
 with gr.Blocks() as demo:
+
+    # CREATES BOX FOR VOICE CHAT
+    with gr.Blocks() as demo:
+
+    chatbot = gr.Chatbot()
+
+    textbox = gr.Textbox()
+
+    microphone = gr.Audio(
+        sources=["microphone"],
+        type="filepath"
+    )
 
     gr.HTML("""
     <center>
@@ -279,6 +373,7 @@ Ask questions about:
 """)
 
     demo.launch(css=my_custom_css)
+
 
 # TODO: This is just a starting point! Customize the system prompt,
 # the model, and the interface to make this project your own!
