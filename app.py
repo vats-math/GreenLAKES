@@ -215,7 +215,7 @@ with gr.Blocks() as demo:
     gr.HTML("""
     <center>
 
-    <img src="/file=logo.png" width="180">
+    <img src="logo.png" width="180">
 
     <h1>GreenLAKES</h1>
 
