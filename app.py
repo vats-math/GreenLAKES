@@ -130,7 +130,7 @@ client = InferenceClient("Qwen/Qwen2.5-7B-Instruct")
 def respond(message, history):
 
     rag_info = get_top_chunks(message, chunk_embeddings, cleaned_chunks)
-    system_message = f"You are a friendly chatbot who uses {rag_info} to answer questions about Kode with Klossy."
+    system_message = f"You are a friendly chatbot who uses {rag_info} to answer questions about GreenLAKES."
     
     messages = [{"role": "system", "content": system_message}]
 
