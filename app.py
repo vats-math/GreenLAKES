@@ -296,43 +296,30 @@ with gr.Blocks() as demo:
 
     gr.HTML("""
     <center>
-
     <img src="logo.png" width="180">
-
     <h1>GreenLAKES</h1>
-
     <p>
     Educating users about pollution and providing strategies
     for sustainable action in their communities.
     </p>
-
     </center>
     """)
 
     gr.Markdown("""
 ## 🌱 GreenLAKES
-
 Ask questions about:
-
 ♻️ Plastic Pollution
-
 💨 Air Pollution
-
 🖥️ E-Waste
-
 🌎 Climate Change
-
 🏡 Sustainable Habits
-
 """)
 
     gr.HTML("""
     <div style="text-align:center">
-
     <h3>
     Explore ways to reduce your environmental impact:
     </h3>
-
     </div>
     """)
 
@@ -340,11 +327,11 @@ Ask questions about:
     gr.ChatInterface(
         fn=respond,
         examples=[
-            "What can GreenLAKES help me with?",
-            "How can I properly recycle a plastic bottle?",
-            "What actions can I take today to reduce my waste at home?",
-            "How do I safely dispose of old electronics and e-waste?",
-            "Why is air pollution harmful to my health and the environment?"
+            "How can I reduce plastic waste?",
+            "What is e-waste?",
+            "How does pollution affect the environment?",
+            "Why is air pollution harmful?",
+            "What actions can I take to help the environment?"
         ]
     )
 
@@ -355,6 +342,71 @@ Ask questions about:
     )
 
 demo.launch(css=my_custom_css)
+
+
+# with gr.Blocks() as demo:
+
+#     gr.HTML("""
+#     <center>
+
+#     <img src="logo.png" width="180">
+
+#     <h1>GreenLAKES</h1>
+
+#     <p>
+#     Educating users about pollution and providing strategies
+#     for sustainable action in their communities.
+#     </p>
+
+#     </center>
+#     """)
+
+#     gr.Markdown("""
+# ## 🌱 GreenLAKES
+
+# Ask questions about:
+
+# ♻️ Plastic Pollution
+
+# 💨 Air Pollution
+
+# 🖥️ E-Waste
+
+# 🌎 Climate Change
+
+# 🏡 Sustainable Habits
+
+# """)
+
+#     gr.HTML("""
+#     <div style="text-align:center">
+
+#     <h3>
+#     Explore ways to reduce your environmental impact:
+#     </h3>
+
+#     </div>
+#     """)
+
+#     # Interactive ChatInterface with clickable FAQ buttons
+#     gr.ChatInterface(
+#         fn=respond,
+#         examples=[
+#             "What can GreenLAKES help me with?",
+#             "How can I properly recycle a plastic bottle?",
+#             "What actions can I take today to reduce my waste at home?",
+#             "How do I safely dispose of old electronics and e-waste?",
+#             "Why is air pollution harmful to my health and the environment?"
+#         ]
+#     )
+
+#     # VOICE CHAT BOX
+#     microphone = gr.Audio(
+#         sources=["microphone"],
+#         type="filepath"
+#     )
+
+# demo.launch(css=my_custom_css)
 
 
 # with gr.Blocks() as demo:
