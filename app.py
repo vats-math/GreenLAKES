@@ -291,11 +291,8 @@ def text_chat(message, history):
 
     return history, history, ""
 
-
+# CREATES BOX FOR VOICE CHAT
 with gr.Blocks() as demo:
-
-    # CREATES BOX FOR VOICE CHAT
-    with gr.Blocks() as demo:
 
     chatbot = gr.Chatbot()
 
