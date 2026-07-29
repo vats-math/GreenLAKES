@@ -340,11 +340,11 @@ Ask questions about:
     gr.ChatInterface(
         fn=respond,
         examples=[
-            "How can I reduce plastic waste?",
-            "What is e-waste?",
-            "How does pollution affect the environment?",
-            "Why is air pollution harmful?",
-            "What actions can I take to help the environment?"
+            "What can GreenLAKES help me with?",
+            "How can I properly recycle a plastic bottle?",
+            "What actions can I take today to reduce my waste at home?",
+            "How do I safely dispose of old electronics and e-waste?",
+            "Why is air pollution harmful to my health and the environment?"
         ]
     )
 
