@@ -210,7 +210,7 @@ def respond(message, history):
 
     return response.choices[0].message.content.strip()
 
-with gr.Blocks() as demo::
+with gr.Blocks() as demo:
 
     gr.HTML("""
     <center>
