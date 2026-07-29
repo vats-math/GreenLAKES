@@ -5,39 +5,70 @@ import torch
 
 # COLORS FIRST
 my_custom_css = """
-body, gradio-app, .main, div.gradio-container {
-    background-color: #EAF7E5 !important;
+/* Background */
+body, gradio-app, .main, .gradio-container {
+    background: linear-gradient(180deg, #EAF7E5, #D8F3DC);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* User messages */
+/* Main container */
+.gradio-container {
+    max-width: 950px !important;
+    margin: auto;
+}
+
+/* User bubble */
 .user-row .message,
-div[data-testid="user-message"] {
-    background-color: #BEE3A5 !important;
-    color: #173B2D !important;
+div[data-testid="user-message"]{
+    background:#A8E6A2 !important;
+    color:#173B2D !important;
+    border-radius:18px !important;
+    padding:14px !important;
 }
 
-/* Bot messages */
+/* Bot bubble */
 .bot-row .message,
-div[data-testid="bot-message"] {
-    background-color: #D8F3DC !important;
-    color: #173B2D !important;
+div[data-testid="bot-message"]{
+    background:white !important;
+    color:#173B2D !important;
+    border-radius:18px !important;
+    padding:14px !important;
+    border:2px solid #D7EED2;
+}
+
+/* Textbox */
+textarea{
+    border-radius:15px !important;
 }
 
 /* Send button */
-button#submit-btn,
-button.primary {
-    background-color: #2E8B57 !important;
-    color: white !important;
-    border-radius: 8px !important;
+button.primary{
+    background:#2E8B57 !important;
+    color:white !important;
+    border:none !important;
+    border-radius:12px !important;
+}
+
+button.primary:hover{
+    background:#256D46 !important;
 }
 
 /* Titles */
-h1 {
-    color: #1E5631 !important;
+h1{
+    color:#1E5631;
+    font-size:42px;
 }
 
-h2, h3 {
-    color: #2E8B57 !important;
+h2{
+    color:#2E8B57;
+}
+
+h3{
+    color:#3B7A57;
+}
+
+p{
+    color:#264D35;
 }
 """
 
