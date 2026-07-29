@@ -180,7 +180,22 @@ client = InferenceClient("Qwen/Qwen2.5-7B-Instruct")
 def respond(message, history):
 
     rag_info = get_top_chunks(message, chunk_embeddings, cleaned_chunks)
-    system_message = f"You are a friendly chatbot who uses {rag_info} to answer questions about GreenLAKES."
+    system_message = f"""
+    You are GreenLAKES, an environmental chatbot.
+
+    Use the provided information to answer questions about:
+    - pollution
+    - sustainability
+    - recycling
+    - climate issues
+    - local environmental actions
+
+    Give helpful and clear answers.
+    Encourage users that individual actions can contribute to larger environmental change.
+
+    Information:
+    {rag_info}
+    """
     
     messages = [{"role": "system", "content": system_message}]
 
@@ -195,17 +210,78 @@ def respond(message, history):
 
     return response.choices[0].message.content.strip()
 
-with gr.Blocks(css=my_custom_css)as demo:
-    gr.ChatInterface(fn=respond)
+with gr.Blocks(css=my_custom_css) as demo:
+
+    gr.HTML("""
+    <center>
+
+    <img src="logo.png" width="180">
+
+    <h1>GreenLAKES</h1>
+
+    <p>
+    Educating users about pollution and providing strategies
+    for sustainable action in their communities.
+    </p>
+
+    </center>
+    """)
+
+
+    gr.Markdown("""
+## 🌱 GreenLAKES
+
+Ask questions about:
+
+♻️ Plastic Pollution
+
+💨 Air Pollution
+
+🖥️ E-Waste
+
+🌎 Climate Change
+
+🏡 Sustainable Habits
+
+""")
+
+
+
+    gr.HTML("""
+    <div style="text-align:center">
+
+    <h3>
+    Explore ways to reduce your environmental impact:
+    </h3>
+
+    </div>
+    """)
+
+
+
+    gr.Examples(
+        examples=[
+            "How can I reduce plastic waste?",
+            "What is e-waste?",
+            "How can I recycle correctly?",
+            "Why is air pollution harmful?",
+            "What actions can I take to help the environment?"
+        ],
+        inputs=None
+    )
+
+
+    gr.ChatInterface(
+        fn=respond
+    )
+
+
+    gr.Markdown("""
+---
+GreenLAKES
+""")
+
 demo.launch()
 
 # TODO: This is just a starting point! Customize the system prompt,
 # the model, and the interface to make this project your own!
-
-import gradio as gr
-
-
-# 2. USE IT IN YOUR BLOCKS AFTER IT'S DEFINED
-with gr.Blocks(css=my_custom_css) as demo:
-    # Your HTML header / logo / ChatInterface code goes inside here!
-    pass
