@@ -1,5 +1,6 @@
 gradio
 huggingface_hub
+faster-whisper
 sentence-transformers
 torch
 numpy
