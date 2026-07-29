@@ -210,7 +210,7 @@ def respond(message, history):
 
     return response.choices[0].message.content.strip()
 
-with gr.Blocks(css=my_custom_css) as demo:
+with gr.Blocks() as demo::
 
     gr.HTML("""
     <center>
@@ -258,30 +258,27 @@ Ask questions about:
     """)
 
 
-
-    gr.Examples(
-        examples=[
-            "How can I reduce plastic waste?",
-            "What is e-waste?",
-            "How can I recycle correctly?",
-            "Why is air pollution harmful?",
-            "What actions can I take to help the environment?"
-        ],
-        inputs=None
-    )
-
-
     gr.ChatInterface(
         fn=respond
     )
 
 
     gr.Markdown("""
----
-GreenLAKES
+    ### Try asking:
+
+    How can I reduce plastic waste?
+
+    What is e-waste?
+
+    How does pollution affect the environment?
+
+    Why is air pollution harmful?
+
+    What actions can I take to help the environment?
+
 """)
 
-demo.launch()
+    demo.launch(css=my_custom_css)()
 
 # TODO: This is just a starting point! Customize the system prompt,
 # the model, and the interface to make this project your own!
