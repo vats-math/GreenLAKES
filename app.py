@@ -6,19 +6,38 @@ import torch
 # COLORS FIRST
 my_custom_css = """
 body, gradio-app, .main, div.gradio-container {
-    background-color: #FFDAA2 !important;
+    background-color: #EAF7E5 !important;
 }
-.user-row .message, div[data-testid="user-message"] {
-    background-color: #A8FF70 !important;
-    color: #092E00 !important;
+
+/* User messages */
+.user-row .message,
+div[data-testid="user-message"] {
+    background-color: #BEE3A5 !important;
+    color: #173B2D !important;
 }
-.bot-row .message, div[data-testid="bot-message"] {
-    background-color: #7abd6a !important;
-    color: #092E00 !important;
+
+/* Bot messages */
+.bot-row .message,
+div[data-testid="bot-message"] {
+    background-color: #D8F3DC !important;
+    color: #173B2D !important;
 }
-button#submit-btn, button.primary {
-    background-color: #00883E !important;
+
+/* Send button */
+button#submit-btn,
+button.primary {
+    background-color: #2E8B57 !important;
     color: white !important;
+    border-radius: 8px !important;
+}
+
+/* Titles */
+h1 {
+    color: #1E5631 !important;
+}
+
+h2, h3 {
+    color: #2E8B57 !important;
 }
 """
 
