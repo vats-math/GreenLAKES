@@ -278,7 +278,7 @@ Ask questions about:
 
 """)
 
-    demo.launch(css=my_custom_css)()
+    demo.launch(css=my_custom_css)
 
 # TODO: This is just a starting point! Customize the system prompt,
 # the model, and the interface to make this project your own!
