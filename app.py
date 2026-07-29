@@ -266,7 +266,7 @@ def voice_chat(audio_file, history):
 
     return history, history
 
-    def text_chat(message, history):
+def text_chat(message, history):
     """
     Handles normal typing.
     """
