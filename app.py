@@ -291,17 +291,8 @@ def text_chat(message, history):
 
     return history, history, ""
 
-# CREATES BOX FOR VOICE CHAT
+
 with gr.Blocks() as demo:
-
-    chatbot = gr.Chatbot()
-
-    textbox = gr.Textbox()
-
-    microphone = gr.Audio(
-        sources=["microphone"],
-        type="filepath"
-    )
 
     gr.HTML("""
     <center>
@@ -353,6 +344,11 @@ Ask questions about:
         fn=respond
     )
 
+    # VOICE CHAT BOX
+    microphone = gr.Audio(
+        sources=["microphone"],
+        type="filepath"
+    )
 
     gr.Markdown("""
     ### Try asking:
