@@ -1,14 +1,282 @@
-Kode With Klossy creates learning experiences and opportunities for young women and gender expansive youth. 
-Our programs ignite a spark that fuels our scholars’ agency to pursue their passions in a tech-driven world. 
-Technology has incredible power to change and influence the way we live our lives and the way we work. 
-This is only becoming more and more true as innovation is happening faster and on a wider scale than ever before.
-Unfortunately, the culture of technology tends to encourage only some identities; and access to education and opportunities is not equitable. 
-We are here to combat that. 
-We want to make sure that young people everywhere have the opportunity to wield the power of technology and pursue bright futures in STEAM.
-Our instructional teams are at the heart of our learning experience. 
-Through training and ongoing support, these educators are armed with the tools they need to create a powerful experience for our scholars. 
-Our alumni are the future leaders in technology. 
-Kode With Klossy provides continued support on their coding journey, far beyond their time in our programs. 
-Kode With Klossy programs are free. 
-Kode With Klossy scholars are curious, community-minded, creative individuals who want to explore the possibilities of technology. 
-We welcome all applicants who identity as young women and gender expansive, ages 13-18 -- regardless of CS experience.
+Soil Pollution:
+Soil pollution refers to the contamination of land caused by the presence of toxic chemicals, heavy metals, industrial waste, and synthetic 
+compounds in concentrations higher than natural levels. The main reasons for soil pollution include intensive agricultural practices using 
+synthetic pesticides and fertilizers, untreated industrial effluent discharges, unmanaged municipal waste in landfills, and mining activities.
+Toxic substances such as lead, arsenic, mercury, microplastics, and petroleum hydrocarbons severely degrade the natural soil composition and
+destroy beneficial soil microorganisms essential for nutrient cycling. When soil becomes contaminated, it loses its fertility, leading to 
+reduced crop yields, soil erosion, and disrupted terrestrial ecosystems. Plants grown in contaminated land absorb these toxic chemicals, 
+allowing pollutants to accumulate up the food chain and threaten wildlife and livestock. Furthermore, hazardous substances in the soil 
+frequently leach downward into underground aquifers, polluting vital drinking water sources. Exposure to polluted soil poses severe human 
+health risks, including respiratory illness, kidney and liver damage, neurological impairment, and increased rates of chronic diseases such
+as cancer. Addressing soil pollution requires adopting sustainable organic agriculture, enforcing strict industrial waste disposal 
+regulations, restoring affected land through biological remediation techniques like phytoremediation, and improving waste recycling
+infrastructure. 
+
+Noise Pollution:
+22% live with outdoor noise above the World Health Organization of 55 decibels for 24 hours in a day. Noise pollution affects sleep and 
+health. Rush hour can go as high as 85 decibels. Rush hour is when people get off work so usually between 3 pm to 6 pm. Agriculture machines
+go up to 85 decibels at 30 affecting 50 million people in India. Overall for environmental noise pollution everywhere has it. Gunfire can go
+up to 140+ decibels leaving 30% with hearing loss and 60% with tinnitus. Tinnitus is a perception of noise without a source. Meaning they
+hear things but there is nothing there. There also is no cure. According to the National Highway Traffic Safety and Administration if 
+someone can’t sleep because of traffic noise it increases the risk by 30% for a wreck to happen.
+
+Space Debris:
+We are in the middle of 2026. Currently, around 30,000 objects are in orbit that are larger than 10 centimeters. More than 140,000 million
+fragments smaller than 1 centimeter. Because of orbital speeds something as small as a marble can destroy one entirely. Each collision 
+creates more debris which increases future debris. The Kessler Syndrome can make orbital altitudes unusable. Thousands of satellites get 
+launched every year making the orbit grow faster. Active removal technologies use robotic arms, nets, or laser nudges. 
+
+Air Pollution:
+Air pollution occurs when the air is contaminated by toxic emissions from fossil fuels and other harmful substances. It is a leading source 
+of climate change. However, air pollution does not only affect the atmosphere, but it also has serious impacts on people, animals, and bodies
+of water such as lakes. Air pollution is mainly caused by greenhouse gases such as carbon dioxide which trap heat in the atmosphere, causing
+global temperatures to rise. This leads to melting glaciers, stronger storms, rising sea levels, and changing weather patterns. In addition,
+pollutants can damage forests, crops, and wildlife by reducing air quality and causing acid rain, which weakens plants and changes the 
+chemistry of the soil. Air pollution has many negative effects on people. If people are exposed to polluted air for too long their risk of 
+severe illnesses such as heart disease and lung cancer increases. Many people can also experience heavy coughing, asthma attacks, and 
+difficulty breathing. Lakes are especially affected by air pollution. Pollutants released into the air can travel long distances before 
+falling into lakes through rain or snow. Sulfur dioxide and nitrogen oxides can create acid rain, making lakes more acidic. This change in 
+water chemistry can harm or kill fish, insects, and other aquatic organisms. Air pollution can also carry excess nitrogen into lakes, 
+causing harmful algal blooms. These blooms reduce oxygen levels in the water, making it difficult for fish and other wildlife to survive. 
+As a result, the health of entire lake ecosystems can decline.
+
+Chemical Pollution:
+Chemical Pollution is the release of harmful chemicals into the environment. This can be the result of pesticides, mining, oil spills, and
+greenhouse gases. Chemical pollution can cause poisoning of land, animals, and humans. This is because certain chemicals emitted can be 
+extremely harmful to nature. Besides poisoning, chemical pollution can also cause breathing problems for people if chemicals are released 
+into the air. Additionally chemical pollution also harms our ozone layer. When chemicals such as chlorofluorocarbons (CFCs) are emitted into 
+the air these chemicals destroy the ozone molecules. This also causes UV rays from the sun to reach earth more easily, harming marine life,
+plants, crops, increasing the risk of immune system damage and skin cancer.
+
+Plastic Pollution:
+Plastic products are generally versatile, durable and lightweight. There are many products in the construction, transportation, and 
+packaging industries. Plastic renovated healthcare industry through new innovations. Plastic waste comes from the production, use, and 
+disposal of mono-material or multi-material plastic products. Mono-material products are composed of a single type of resin, while 
+multi-material products include one or more resin types, paper, or metal. EPA divides plastic products into three types for municipal solid 
+waste purposes:  
+- Containers and packaging. Containers and packaging include plastic bags, containers, and wrapping material. They wrap or contain consumer
+goods like food, beverages, medications, cosmetic products, mattresses and are discarded within the household.
+- Nondurable goods. Nondurable goods include are products unable to be used longer than 3 years, such as plastic plates, cups, trash bags, 
+disposable diapers, and clothing. 
+- Durable goods. Durable goods consist of products that remain in use for longer than three years such as appliances, furniture, carpet, 
+and consumer electronics. 
+Plastic products are primarily made from virgin fossil fuel feedstocks. The three types of plastic products are categorized into seven 
+polymer types with resin codes, which are typically listed on materials using the icons in the graphic below. Understanding the different
+plastic polymer types is important because some recycling systems only accept certain types, meaning some plastic products may not be 
+recyclable in those systems. Governments can develop polymer-specific solutions if certain products are commonly mismanaged or littered. 
+EPA’s estimates show that the amount of plastic waste in the United States' municipal solid waste system has grown continuously since 1960,
+with the greatest increases occurring between 1980 and 2000. Plastic waste generated in the U.S. increased from 0.4% of total municipal 
+solid waste in 1960 to 12.2% in 2018, reaching 13.2% in 2017. This consists of containers and packaging, which includes single-use products,
+such as bags, wraps, and bottles, and does not include plastic waste from other sources, such as agricultural waste. Plastic waste can 
+intentionally or unintentionally enter the environment during the production, consumption, and disposal phases of the product lifecycle, 
+though it is most common at the end of its useful life. Plastic pollution can come from:  
+- Resin pellets leaking during plastic production. 
+- Mismanaged waste (e.g., waste collected but improperly or illegally disposed of or waste that is not collected in areas where solid waste 
+management services exist).  
+- Litter (e.g., items discarded in the environment).  
+- Abrasion (e.g., “wear-and-tear”) and losses of microplastics.  
+- Industrial and marine activities.  
+- Catastrophic events.  
+- Urban and stormwater runoff.  
+- Washing machine wastewater. 
+Plastic pollution from land-based sources that ends up in oceans and waterways includes littered items such as packaging 
+(e.g., flexible films), single-use products, durable consumer products, household products, and microplastics (e.g., tire wear particles 
+and microfibers from textiles). Plastic pollution from sea-based sources can include abandoned, lost, or otherwise discarded boating, 
+fishing, or aquaculture gear. The National Academies of Science, Engineering, and Medicine estimate that land-based sources account for up 
+to 80% of plastic waste that pollutes waterways and oceans.  The U.S. plays a critical role in the global economy of plastic products.
+The Organisation for Economic Cooperation and Development estimates that the U.S. consumed 18% of global plastic products in 2019, and 
+plastic use per capita was higher than in any other country globally. OECD also projects that, without interventions, global plastic use 
+and waste will almost triple by 2060. EPA released a strategy for how we can work collaboratively with U.S. state, Tribal, territorial, and 
+local governments; industry and trade organizations; community organizations and NGOs; academia and consumers to prevent plastic pollution. 
+Every piece of plastic that’s ever been created still exists in our world. Plastic pollution poses a significant threat to our environment, 
+our wildlife and even our health. Single-use plastic is the worst culprit. It’s manufactured to last forever, yet it’s often used for only a
+few minutes before being thrown away. So what can we do to turn the tide on one of the most urgent issues of our time?
+Plastic was originally designed in the early 1900s to replace natural materials such as ivory and tortoiseshell – but since then, its 
+production has escalated to extreme levels. Today, the production of plastic has surpassed all other man-made materials except steel and 
+cement, and it’s expected to increase by 40% over the next decade[1].
+Since the 1950s, researchers estimate that humanity has produced 9.2 billion tonnes of plastic – some 7 billion tonnes of which have become
+waste[2]. Today, we’re producing twice as much plastic waste as we were two decades ago, and less than 10% is successfully recycled[3]. 
+Billions of tonnes of the stuff ends up in our landfills, our rivers and our oceans. And because plastic breaks up, rather than breaking
+down, it becomes a permanent problem.
+Plastic pollution is building up in our oceans, throughout our natural environment, and even in the stomachs of our precious wildlife. 
+And while recycling efforts can make a difference, we can’t just recycle our way out of the issue.
+The growing rate of plastic production raises problems in many areas of our society. Single-use plastic in particular is contributing to
+waste and pollution issues, impacting our health, and threatening our oceans and wildlife.
+Every single day, the equivalent of 2,000 garbage trucks full of plastic are dumped into the world’s oceans, rivers, and lakes. 
+And every year, 19-23 million tonnes of plastic waste leaks into aquatic ecosystems, polluting lakes, rivers and seas[4]. It also 
+disproportionately affects marginalised and vulnerable communities living near plastic production and waste sites, as well as waste 
+workers and indigenous populations, according to a report by the UN Environment Programme (UNEP) and environmental justice non-governmental 
+organisation, Azul. Studies have shown that microplastics significantly damage cells, leading to cancers, lung disease, and birth defects[5]
+Toxic chemical additives in plastics can alter hormone activity, which disrupts reproduction, growth and cognitive function[5] Microplastics
+may be inhaled, and have been found in human organs and the placentas of unborn babies[6] Toxic chemicals such as phthalates and BPA are 
+present in plastic food packaging
+8 million tonnes of plastic pollution enters our oceans each year[7]
+More than 270 marine species are affected by marine debris[8] through ingestion, entanglement and chemical contamination[9]
+In the next 30 years, 99% of seabirds will have ingested plastic[8]
+Only 9% of our plastic is recycled, and only 10% of that has been recycled more than once[10]
+Recycled plastics are mostly downcycled, meaning that they’re recycled into products of lesser quality, which are less likely to be further
+recycled
+Recycling is important, but will never be the solution to our rapidly expanding plastic consumption
+When we hear these facts, it’s easy to feel hopeless – but the Plastic Free Foundation has shown that small changes by millions of people 
+can add up, making a big impact. 
+Since the launch of Plastic Free July™ in 2011, millions of people worldwide have participated in this unique social movement, which 
+encourages community, corporate and government action to reduce plastic waste. Designed to help people refuse single-use plastic and
+reduce plastic waste, at least 174 million people took part in the 2024 challenge, reducing landfill waste by 1,700 million kgs, recyclable
+waste by 1,200 million kgs, and overall plastic consumption by 390 million kgs.
+These kinds of social movements not only influence communities to embrace long-lasting solutions; they can also influence business and
+governments to take action. Governments can act on overwhelming public support by agreeing on a UN Global Plastics Treaty to end plastic 
+pollution with binding global rules. These rules regulate production and consumption, make plastic producers accountable, and ban and phase 
+out the most harmful plastics and chemicals – and global polling done by The Plastic Free Foundation shows strong public support. We need to
+replace our current ‘take, make, throw’ economy with a circular economy for plastic and other resources. The Ellen McArthur Foundation 
+describes this as a ‘system where materials never become waste, and nature is regenerated. Products and materials are kept in circulation 
+through processes like maintenance, reuse, refurbishment, remanufacture, recycling, and composting’[11]. A circular economy for plastics
+requires three actions:
+We can eliminate problematic or unnecessary plastic packaging through redesign, innovation, policies like single-use plastic bans, and 
+delivery models like ‘reuse and refill’.We can eliminate problematic or unnecessary plastic packaging through redesign, innovation, 
+policies like single-use plastic bans, and delivery models like ‘reuse and refill’. Innovations ensure that the plastics we do need are 
+reusable, recyclable (‘actually’, not ‘technically’), or compostable. Plastic producers and manufacturers also take responsibility for 
+plastics and products over their lifetime. Circulation of plastics keeps them in the economy and out of the environment. Plastic is 
+produced in ways that don’t increase consumption of oil, gas or coal. And plastic packaging is free of hazardous chemicals, with respect to 
+the health, safety, and rights of those involved.
+
+Light Pollution:
+Light Pollution is the excess or inappropriate artificial light outdoors. Light pollution occurs in three ways: glare, light trespass, and
+skyglow. Glare is the bright and uncomfortable light shining directly to the observer that interferes with your vision. Light trespass is 
+the unintended spill of artificial light into other people’s property or space and often becomes a source of conflict. Skyglow is the 
+brightening of the night sky from human-caused light scattered in the atmosphere. Outdoor lighting is often necessary for a productive 
+modern society, nonetheless the widespread use of artificial light has substantially altered the natural pattern of darkness and obscured 
+our view of the natural night sky. The brightening of the night sky is not limited to urban environments as the glow from cities has been 
+documented by the NPS at distances over 200 miles from national parks. Light pollution is increasing globally, in both developed and 
+developing countries. Satellite data show that from 2012 to 2016, continuously lit areas brightened at a rate of 2.2% per year [1]. The
+naturally dark area is shrinking too as Earth’s artificially lit outdoor area grew by 2.2% per year [1]. Furthermore, recent citizen 
+scientists’ measurements indicate that the average night sky got brighter by 9.6% per year from 2011 to 2022, which is equivalent to 
+doubling the sky brightness every 8 years [2]. The exceptions to this rapid light pollution growth rate include areas where lighting
+regulations have been created and enforced, such as Tucson, Arizona, portions of Northern Italy [3], and Flagstaff, Arizona [4]. Light 
+scattered through the atmosphere brightens the night sky, making stars and planets impossible to see due to the reduced contrast. Light
+pollution also prevents the human eye from fully dark-adapting and reaching its maximum sensitivity. Sometimes, the more light there is at
+night, the less we can see. Light pollution tends to be most acute in urban environments, have pronounced ecological effects, and 
+potentially influence human circadian rhythms. Light pollution also disrupts ecosystems, wastes energy, increases impacts of climate change 
+and can have adverse health effects in humans. In a remote or otherwise dark environment, visual impacts from light pollution are perceived
+at longer distances. Even if the area of the sky near the Zenith is relatively free of scattered anthropogenic light, areas near the horizon
+may appear bright or individual light domes from distant cities may be seen. In a natural protected area like a national park, these bright
+areas produce a measurable impact on a park’s the natural condition.The nighttime environment plays an integral role in human health and 
+physiology. Dark nights (and bright days) are key in keeping our circadian rhythm in sync. It is well documented that without the 
+restorative power of consistent restful sleep, serious health consequences can arise.Artificial light can impact visitors in two ways: 
+direct glare from light fixtures can affect vision and nighttime recreation experiences; and sky glow from collective sources of artificial 
+light scattered in the atmosphere can obscure views of the night sky. Both aspects of artificial light can unnaturally illuminate the 
+ground and diminish visitors’ ability to dark adapt their vision, cause blind spots, and create potential safety issues as well. (e.g., 
+wildlife/visitor conflict).Air pollution and other atmospheric conditions further scatter artificial light making the night sky even 
+brighter and harder to see. The atmosphere includes molecules of gases, such as nitrogen, oxygen, water vapor, and carbon dioxide. The 
+atmosphere also includes aerosols, such as dust, soot, salts, and chemical precipitates. The amount and type of aerosols, moisture level in 
+the air, and the altitude above sea level are the primary variables determining the scattering that will occur. Increasing the aerosol 
+content in the atmosphere will increase scattering, making light domes appear larger and brighter to nearby observers. Therefore, aerosols 
+from the haze, dust, and air pollutants tend to enhance the skyglow.In addition, clouds over the cities will make the night skies brighter. 
+Clouds reflect the light back downward and increase scattering. The combination of these effects redirects the upward escaping light back
+to observers. Clouds over a city light dome can enhance the sky brightness by as much as 1000 times compared to a clear night.Models and 
+measurements of the brightness of city light domes show a relationship between the city's population and the distance to the observer. This 
+relationship is known as Walker's Law. Primarily derived from actual observations, this formula may predict the anthropogenic skyglow:
+Skyglow = C x Population x (Distance)-2.5
+The constant C is dependent on the units of luminance used and the per capita "escaped light" of the city. Cities at closer distance with 
+larger populations are predicted to cause greater light pollution.People all over the world are living under the nighttime glow of 
+artificial light, and it is causing big problems for humans, wildlife, and the environment. There is a global movement to reduce light
+pollution, and everyone can help.Most environmental pollution on Earth comes from humans and their inventions. Take, for example, the 
+automobile or that miraculous human-made material, plastic. Today, automobile emissions are a major source of air pollution contributing to
+climate change, and plastics fill our ocean, creating a significant health hazard to marine animals.And what about the electric lightbulb, 
+thought to be one of the greatest human inventions of all time? Electric light can be a beautiful thing, guiding us home when the sun goes 
+down, keeping us safe and making our homes cozy and bright. However, like carbon dioxide emissions and plastic, too much of a good thing has 
+started to negatively impact the environment. Light pollution, the excessive or inappropriate use of outdoor artificial light, 
+is affecting human health, wildlife behavior, and our ability to observe stars and other celestial objects.
+Light pollution is a global issue. This became obvious when the World Atlas of Night Sky Brightness, a computer-generated map based on 
+thousands of satellite photos, was published in 2016. Available online for viewing, the atlas shows how and where our globe is lit up at 
+night. Vast areas of North America, Europe, the Middle East, and Asia are glowing with light, while only the most remote regions on Earth 
+(Siberia, the Sahara, and the Amazon) are in total darkness. Some of the most light-polluted countries in the world are Singapore, Qatar, 
+and Kuwait.Sky glow is the brightening of the night sky, mostly over urban areas, due to the electric lights of cars, streetlamps, offices,
+factories, outdoor advertising, and buildings, turning night into day for people who work and play long after sunset.People living in cities
+with high levels of sky glow have a hard time seeing more than a handful of stars at night. Astronomers are particularly concerned with sky
+glow pollution as it reduces their ability to view celestial objects.More than 80 percent of the world’s population, and 99 percent of 
+Americans and Europeans, live under sky glow. It sounds pretty, but sky glow caused by anthropogenic activities is one of the most
+pervasive forms of light pollution.Artificial light can wreak havoc on natural body rhythms in both humans and animals. Nocturnal light
+interrupts sleep and confuses the circadian rhythm—the internal, twenty-four-hour clock that guides day and night activities and affects 
+physiological processes in nearly all living organisms. One of these processes is the production of the hormone melatonin, which is
+released when it is dark and is inhibited when there is light present. An increased amount of light at night lowers melatonin production,
+which results in sleep deprivation, fatigue, headaches, stress, anxiety, and other health problems. Recent studies also show a connection 
+between reduced melatonin levels and cancer. In fact, new scientific discoveries about the health effects of artificial light have convinced
+the American Medical Association (AMA) to support efforts to control light pollution and conduct research on the potential risks of 
+exposure to light at night. Blue light, in particular, has been shown to reduce levels of melatonin in humans. Blue light is found in cell 
+phones and other computer devices, as well as in light-emitting diodes (LEDs), the kinds of bulbs that have become popular at home and in 
+industrial and city lighting due to their low cost and energy efficiency.Studies show that light pollution is also impacting animal 
+behaviors, such as migration patterns, wake-sleep habits, and habitat formation. Because of light pollution, sea turtles and birds guided 
+by moonlight during migration get confused, lose their way, and often die. Large numbers of insects, a primary food source for birds and 
+other animals, are drawn to artificial lights and are instantly killed upon contact with light sources. Birds are also affected by this, 
+and many cities have adopted a “Lights Out” program to turn off building lights during bird migration.A study of blackbirds (Turdus merula)
+in Germany found that traffic noise and artificial night lighting causes birds in the city to become active earlier than birds in natural 
+areas—waking and singing as much as five hours sooner than their country cousins. Even animals living under the sea may be affected by 
+underwater artificial lighting. One study looked at how marine animals responded to brightly lit panels submerged under water off the coast 
+of Wales. Fewer filter feeding animals, such as the sea squirt and sea bristle, made their homes near the lighted panels. This could mean 
+that the light from oil rigs, passing ships, and harbors is altering marine ecosystems.Even in places meant to provide protected natural 
+habitats for wildlife, light pollution is making an impact. The National Park Service (NPS) has made maintaining a dark night sky a 
+priority. The NPS Night Skies Team has been monitoring night sky brightness in some one hundred parks, and nearly every park showed at 
+least some light pollution.There are three other kinds of light pollution: glare, clutter, and light trespass. Glare is excessive brightness
+that can cause visual discomfort (for example, when driving). Clutter is bright, confusing, and excessive groupings of light sources
+(for example, Times Square in New York City, New York). Light trespass is when light extends into an area where it is not wanted or needed
+(like a streetlight illuminating a nearby bedroom window). Most outdoor lighting is poorly positioned, sending wasted electricity up into 
+the sky.There are several organizations working to reduce light pollution. One of these is the U.S.-based International Dark Sky Association
+(IDA), formed in 1988 to preserve the natural night sky. IDA educates the public and certifies parks and other places that have worked to
+reduce their light emissions. In 2017, the IDA approved the first U.S. dark sky reserve. The massive Central Idaho Dark Sky Reserve, which 
+clocks in at 3,667 square kilometers (1,416 square miles), joined eleven other dark sky reserves established around the world. As of 
+December of 2018, IDA lists thirteen dark sky reserves on their site.More people are taking action to reduce light pollution and bring back
+the natural night sky. Many states have adopted legislation to control outdoor lighting, and manufacturers have designed and produced 
+high-efficiency light sources that save energy and reduce light pollution.Individuals are urged to use outdoor lighting only when and where
+it is needed, to make sure outdoor lights are properly shielded and directing light down instead of up into the sky, and to close window 
+blinds, shades, and curtains at night to keep light inside.
+
+Water Pollution:
+Water pollution is what happens when various harmful substances get into a body of water, such as a stream, river, or ocean, and contaminate
+it. These harmful substances cause the overall quality of the water to decrease and make it toxic to living creatures and the surrounding 
+environment. Pollution can happen in a range of different environments, such as the air and soil, but water is especially vulnerable to it. 
+This is because the nature of water allows substances to dissolve more easily in it than in any other liquid on Earth.This means that 
+harmful substances from the areas surrounding a body of water can easily enter and become part of the water, which causes water pollution. 
+There are many different types of water pollution:
+Groundwater
+Groundwater is what happens when rain falls and absorbs into the cracks and spaces in soil, sand, and rock and is then stored underground.
+Groundwater is one of the most important natural resources that we have for providing drinking water. For people who live in more rural 
+areas, groundwater is often their only source of fresh water. So, how does it get polluted? Groundwater can get polluted when harmful 
+substances, often from pesticides, fertilisers, and waste materials travel into an aquifer, which is a body of rock that holds groundwater.
+This water then becomes unsafe for human use, which is particularly problematic for people in rural areas who are dependent on groundwater 
+for drinking water.Once an aquifer has been polluted, it is almost impossible to reverse the damage, and it can stay contaminated for 
+thousands of years. Moreover, groundwater can spread its contamination over large distances via other bodies of water, like streams and 
+oceans.
+Surface water
+Surface water is the water that is found in the oceans, lakes, rivers, and other bodies of water that cover the earth. Surface water across
+the world is at high risk of being contaminated, making it unfit for use, be that for drinking, swimming in, etc.The primary source of 
+contamination of surface water is nutrient pollution. This pollution is caused when nutrients, like nitrates and phosphates, travel into 
+bodies of water as fertiliser run-off and farm waste.
+Ocean water
+The majority of ocean pollution derives from harmful substances on land. Contaminants, such as chemicals, nutrients, and heavy metals, 
+start on land in farms and factories etc, and make their way into streams and rivers.These bodies of water then carry the contaminating 
+substances into the ocean. Marine litter, which is any human-created waste that has been released into the sea or ocean, can also get blown 
+into the water by the wind, or swept in via storm drains and sewers.What’s more, the ocean soaks up around a quarter of man-made carbon 
+emissions from the air, which contributes to its pollution.
+Point source
+Point source pollution is the name given when contamination derives from just one single source. Some examples of point source pollution
+include wastewater, oil refinery, chemical and oil spills, and illegal dumping.Whilst point source pollution comes from just one place, it 
+can travel long distances and affect lots of waterways and oceans.
+Non-point source
+Non-point source pollution, on the other hand, comes from a range of different sources, including agricultural sources and stormwater 
+run-off. Non-point source pollution is one of the leading causes of water pollution, but is very hard to control as there isn’t one, 
+distinct source.
+Transboundary
+Transboundary pollution is what happens when contaminated water from one country travels into another country. This type of water pollution 
+can happen as a result of a major event like an oil spill, or more discretely through industrial, agricultural, or municipal wastewater.
+The most common types of water contaminationIn addition to water pollution, there are many different types of water contamination.
+Agricultural
+The agricultural sector is the largest consumer of global freshwater resources, as around 70% of the earth’s surface water is used for 
+farming and livestock. Agriculture is the leading cause of water degradation around the world. The agricultural industry has harmful 
+effects on the earth’s surface water, as well as its groundwater resources.Well, the harmful substances that are put to good use on farms, 
+like fertilisers and pesticides, as well as animal waste, are washed into the earth’s waterways every time it rains. This leads to nutrient 
+pollution.
+Sewage and wastewater
+Wastewater is a broad term given to any water that has previously been used. So, wastewater can come from our homes, via showers and 
+toilets, etc., and from a range of commercial, industrial, and agricultural sources.This process reduces the amount of sewage and wastewater
+contamination around the world, but it is not overly successful as there are still billions of gallons of untreated wastewater released into
+the environment every year.
