@@ -309,7 +309,6 @@ with gr.Blocks() as demo:
     </center>
     """)
 
-
     gr.Markdown("""
 ## 🌱 GreenLAKES
 
@@ -327,8 +326,6 @@ Ask questions about:
 
 """)
 
-
-
     gr.HTML("""
     <div style="text-align:center">
 
@@ -339,9 +336,16 @@ Ask questions about:
     </div>
     """)
 
-
+    # Interactive ChatInterface with clickable FAQ buttons
     gr.ChatInterface(
-        fn=respond
+        fn=respond,
+        examples=[
+            "How can I reduce plastic waste?",
+            "What is e-waste?",
+            "How does pollution affect the environment?",
+            "Why is air pollution harmful?",
+            "What actions can I take to help the environment?"
+        ]
     )
 
     # VOICE CHAT BOX
@@ -350,22 +354,83 @@ Ask questions about:
         type="filepath"
     )
 
-    gr.Markdown("""
-    ### Try asking:
+demo.launch(css=my_custom_css)
 
-    How can I reduce plastic waste?
 
-    What is e-waste?
+# with gr.Blocks() as demo:
 
-    How does pollution affect the environment?
+#     gr.HTML("""
+#     <center>
 
-    Why is air pollution harmful?
+#     <img src="logo.png" width="180">
 
-    What actions can I take to help the environment?
+#     <h1>GreenLAKES</h1>
 
-""")
+#     <p>
+#     Educating users about pollution and providing strategies
+#     for sustainable action in their communities.
+#     </p>
 
-    demo.launch(css=my_custom_css)
+#     </center>
+#     """)
+
+
+#     gr.Markdown("""
+# ## 🌱 GreenLAKES
+
+# Ask questions about:
+
+# ♻️ Plastic Pollution
+
+# 💨 Air Pollution
+
+# 🖥️ E-Waste
+
+# 🌎 Climate Change
+
+# 🏡 Sustainable Habits
+
+# """)
+
+
+
+#     gr.HTML("""
+#     <div style="text-align:center">
+
+#     <h3>
+#     Explore ways to reduce your environmental impact:
+#     </h3>
+
+#     </div>
+#     """)
+
+
+#     gr.ChatInterface(
+#         fn=respond
+#     )
+
+#     # VOICE CHAT BOX
+#     microphone = gr.Audio(
+#         sources=["microphone"],
+#         type="filepath"
+#     )
+
+#     gr.Markdown("""
+#     ### Try asking:
+
+#     How can I reduce plastic waste?
+
+#     What is e-waste?
+
+#     How does pollution affect the environment?
+
+#     Why is air pollution harmful?
+
+#     What actions can I take to help the environment?
+
+# """)
+
+#     demo.launch(css=my_custom_css)
 
 
 # TODO: This is just a starting point! Customize the system prompt,
