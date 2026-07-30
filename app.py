@@ -400,18 +400,6 @@ with gr.Blocks(css=my_custom_css) as demo:
                         )
                         submit_btn = gr.Button("Send", variant="primary", scale=1)
 
-                    # Create microphone button
-                    microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
-                    mic_button = gr.Button("🎤 Send Voice")
-                    mic_button.click(
-                        fn=voice_chat,
-                        inputs=[
-                            microphone,
-                            chat.chatbot_state
-                        ],
-                        outputs=chat.chatbot
-                    )
-
 
             
                 with gr.Column(scale=2):
@@ -446,7 +434,17 @@ with gr.Blocks(css=my_custom_css) as demo:
     
             generate_tip_btn.click(get_random_tip, outputs=tip_display)
 
-demo.launch(css=my_custom_css)
+demo.launch(css=my_custom_css, # Create microphone button
+                    microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
+                    mic_button = gr.Button("🎤 Send Voice")
+                    mic_button.click(
+                        fn=voice_chat,
+                        inputs=[
+                            microphone,
+                            chat.chatbot_state
+                        ],
+                        outputs=chat.chatbot
+                    ))
 
 # with gr.Blocks(css=my_custom_css) as demo:
 
