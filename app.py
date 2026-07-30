@@ -70,6 +70,40 @@ button.primary{
 button.primary:hover{
     background:#256D46 !important;
 }
+/* Dark Background */
+.dark body, .dark gradio-app, .dark .main, .dark .gradio-container {
+    background: linear-gradient(180deg, #122119, #0B1510) !important;
+}
+
+/* Dark User Bubble */
+.dark .user-row .message, .dark div[data-testid="user-message"] {
+    background: #23533E !important;
+    color: #E2F4DF !important;
+}
+
+/* Dark Bot Bubble */
+.dark .bot-row .message, .dark div[data-testid="bot-message"] {
+    background: #192D23 !important;
+    color: #E2F4DF !important;
+    border: 2px solid #2D4D3D !important;
+}
+
+/* Dark Input & Textarea */
+.dark textarea, .dark input {
+    background-color: #16281F !important;
+    color: #E2F4DF !important;
+    border: 1px solid #2D4D3D !important;
+}
+
+/* Dark Send Button */
+.dark button.primary {
+    background: #41AA70 !important;
+    color: #0B1510 !important;
+    font-weight: bold;
+}
+.dark button.primary:hover {
+    background: #52C284 !important;
+}
 
 /* Titles */
 h1{
