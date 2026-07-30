@@ -357,6 +357,11 @@ def get_random_tip():
     return random.choice(ECO_TIPS)
 
 
+def calculate_impact(plastic_bottles, shower_mins):
+    bottles_saved_year = plastic_bottles * 52
+    water_saved_year = shower_mins * 2.5 * 365
+
+
 with gr.Blocks(css=my_custom_css) as demo:
 
 
@@ -443,6 +448,33 @@ with gr.Blocks(css=my_custom_css) as demo:
 
     
             generate_tip_btn.click(get_random_tip, outputs=tip_display)
+
+        #impact tab
+
+        with gr.Tab("📊 Impact Calculator"):
+            gr.Markdown("### Personal Impact Calculator")
+            gr.Markdown("Adjust the sliders below to see how much water and plastic waste your daily habits can save in a year!")
+            
+            with gr.Row():
+                with gr.Column():
+                    slider_bottles = gr.Slider(
+                        minimum=0, maximum=30, value=7, step=1,
+                        label="Reusable water bottles used per week (instead of single-use)"
+                    )
+                    slider_shower = gr.Slider(
+                        minimum=0, maximum=15, value=3, step=1,
+                        label="Minutes reduced from daily shower time"
+                    )
+                    calc_btn = gr.Button("Calculate Impact", variant="primary")
+                
+                with gr.Column():
+                    results_display = gr.Markdown("Adjust sliders and click **Calculate Impact** to see your results!")
+
+            calc_btn.click(
+                calculate_impact,
+                inputs=[slider_bottles, slider_shower],
+                outputs=results_display
+            )
 
 demo.launch(css=my_custom_css)
 
