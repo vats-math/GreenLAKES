@@ -296,7 +296,7 @@ with gr.Blocks() as demo:
 
     gr.HTML("""
     <center>
-    <img src="logo.png" width="180">
+    <img src="/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png">
     <h1>GreenLAKES</h1>
     <p>
     Educating users about pollution and providing strategies
