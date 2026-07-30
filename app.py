@@ -399,8 +399,14 @@ with gr.Blocks(css=my_custom_css) as demo:
                             scale=4
                         )
                         submit_btn = gr.Button("Send", variant="primary", scale=1)
-
-
+      
+                        # CREATE MIC BUTTON
+                        microphone = gr.Audio(
+                            sources=["microphone"],
+                            type="filepath",
+                            label="Voice Input"
+                        )
+                        mic_button = gr.Button("🎤 Send Voice")
             
                 with gr.Column(scale=2):
                     gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
@@ -417,7 +423,13 @@ with gr.Blocks(css=my_custom_css) as demo:
 
             msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
             submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
-            microphone.change(voice_chat, inputs=[microphone, chatbot], outputs=[chatbot, chatbot])
+            
+            #VOICE CHAT
+             mic_button.click(
+                voice_chat,
+                inputs=[microphone, chatbot],
+                outputs=[chatbot, chatbot]
+            )
 
             faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
             for btn in faq_buttons:
@@ -433,18 +445,6 @@ with gr.Blocks(css=my_custom_css) as demo:
 
     
             generate_tip_btn.click(get_random_tip, outputs=tip_display)
-
-# Create microphone button
-microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
-mic_button = gr.Button("🎤 Send Voice")
-mic_button.click(
-    fn=voice_chat,
-    inputs=[
-        microphone,
-        chat.chatbot_state
-    ],
-    outputs=chat.chatbot
-)
 
 demo.launch(css=my_custom_css)
 
