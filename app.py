@@ -406,7 +406,7 @@ with gr.Blocks(css=my_custom_css) as demo:
                     mic_button.click(
                         fn=voice_chat,
                         inputs=[
-                            audio,
+                            microphone,
                             chat.chatbot_state
                         ],
                         outputs=chat.chatbot
