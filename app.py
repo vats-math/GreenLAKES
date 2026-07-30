@@ -195,7 +195,7 @@ def respond(message, history):
 
     Give helpful and clear answers.
     Encourage users that individual actions can contribute to larger environmental change.
-
+    Answer questions concisely. Do not repeat greeting introductions if the user just says hello.
     Information:
     {rag_info}
     """
