@@ -1,4 +1,5 @@
 import gradio as gr
+import random
 from faster_whisper import WhisperModel
 from huggingface_hub import InferenceClient
 from sentence_transformers import SentenceTransformer
@@ -342,9 +343,27 @@ def text_chat(message, history):
 
     return history, history, ""
 
+
+# eco-friendly tips
+
+ECO_TIPS = [
+    "💡 **Energy:** Unplug electronics like TVs, gaming consoles, and microwave clocks when not in use to prevent 'phantom energy' draw.",
+    "💧 **Water:** Turning off the tap while brushing your teeth can save up to 8 gallons of water a day!",
+    "🛍️ **Shopping:** Keep reusable grocery bags in your car, backpack, or near your front door so you never forget them.",
+    "🥗 **Food:** Try 'Meatless Mondays'—eating plant-based meals even one day a week significantly shrinks your carbon footprint.",
+    "📱 **E-Waste:** Store old phones and chargers in a box and drop them off at certified e-waste recycling bins instead of throwing them away.",
+    "🚿 **Water:** Cutting just 2 minutes off your shower time saves up to 5 gallons of water every single time!",
+    "🧺 **Laundry:** Washing your clothes in cold water saves around 90% of the energy your washing machine uses to heat water.",
+    "🚲 **Commute:** Walking, biking, or taking public transit for short trips cuts down on greenhouse gas emissions and vehicle wear-and-tear."
+]
+
+def get_random_tip():
+    return random.choice(ECO_TIPS)
+
+
 with gr.Blocks(css=my_custom_css) as demo:
 
-    # Header section
+
     gr.HTML("""
     <center>
     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png" width="180">
@@ -356,57 +375,133 @@ with gr.Blocks(css=my_custom_css) as demo:
     </center>
     """)
 
-    # Main side-by-side layout
-    with gr.Row():
-        
-        # LEFT COLUMN
-        with gr.Column(scale=3):
-            chatbot = gr.Chatbot(
-                value=[{
-                    "role": "assistant",
-                    "content": "Hello! I am GreenLAKES. How can I help you today with questions about pollution, recycling, or sustainability?"
-                }],
-                height=520
-            )
-            
+ 
+    with gr.Tabs():
+
+        # tab 1 chat bot
+        with gr.Tab("💬 Chat Assistant"):
             with gr.Row():
-                msg = gr.Textbox(
-                    placeholder="Ask a question...",
-                    show_label=False,
-                    scale=4
-                )
-                submit_btn = gr.Button("Send", variant="primary", scale=1)
-
-            microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
-
-        # RIGHT COLUMN
-        with gr.Column(scale=2):
-            gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
+                
             
-            faq_1 = gr.Button("How can I reduce plastic waste?")
-            faq_2 = gr.Button("How can I save energy at home?")
-            faq_3 = gr.Button("What food scraps can I compost at home?")
-            faq_4 = gr.Button("How do I safely dispose of e-waste?")
-            faq_5 = gr.Button("What habits help reduce food waste?")
-            faq_6 = gr.Button("What daily habits help conserve water?")
-            faq_7 = gr.Button("How can I make my daily commute greener?")
-            faq_8 = gr.Button("How can I shop for clothes sustainably?")
+                with gr.Column(scale=3):
+                    chatbot = gr.Chatbot(
+                        value=[{
+                            "role": "assistant",
+                            "content": "Hello! I am GreenLAKES. How can I help you today with questions about pollution, recycling, or sustainability?"
+                        }],
+                        height=520
+                    )
+                    
+                    with gr.Row():
+                        msg = gr.Textbox(
+                            placeholder="Ask a question...",
+                            show_label=False,
+                            scale=4
+                        )
+                        submit_btn = gr.Button("Send", variant="primary", scale=1)
+
+                    microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
+
+            
+                with gr.Column(scale=2):
+                    gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
+                    
+                    faq_1 = gr.Button("How can I reduce plastic waste?")
+                    faq_2 = gr.Button("How can I save energy at home?")
+                    faq_3 = gr.Button("What food scraps can I compost at home?")
+                    faq_4 = gr.Button("How do I safely dispose of e-waste?")
+                    faq_5 = gr.Button("What habits help reduce food waste?")
+                    faq_6 = gr.Button("What daily habits help conserve water?")
+                    faq_7 = gr.Button("How can I make my daily commute greener?")
+                    faq_8 = gr.Button("How can I shop for clothes sustainably?")
+
+
+            msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
+            submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
+            microphone.change(voice_chat, inputs=[microphone, chatbot], outputs=[chatbot, chatbot])
+
+            faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
+            for btn in faq_buttons:
+                btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
+
+        # random daily tios
+        with gr.Tab("🌱 Daily Eco-Tip Generator"):
+            gr.Markdown("### 🎲 Get a Quick Eco-Friendly Habit Tip")
+            gr.Markdown("Click the button below to generate a simple, actionable eco-tip you can try today!")
+            
+            tip_display = gr.Markdown("👉 *Click 'Generate Eco-Tip' to get started!*")
+            generate_tip_btn = gr.Button("Generate Eco-Tip 🎲", variant="primary")
+
+    
+            generate_tip_btn.click(get_random_tip, outputs=tip_display)
+
+demo.launch(css=my_custom_css)
+
+# with gr.Blocks(css=my_custom_css) as demo:
+
+#     # Header section
+#     gr.HTML("""
+#     <center>
+#     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png" width="180">
+#     <h1>GreenLAKES</h1>
+#     <p>
+#     Educating users about pollution and providing strategies
+#     for sustainable action in their communities.
+#     </p>
+#     </center>
+#     """)
+
+#     # Main side-by-side layout
+#     with gr.Row():
+        
+#         # LEFT COLUMN
+#         with gr.Column(scale=3):
+#             chatbot = gr.Chatbot(
+#                 value=[{
+#                     "role": "assistant",
+#                     "content": "Hello! I am GreenLAKES. How can I help you today with questions about pollution, recycling, or sustainability?"
+#                 }],
+#                 height=520
+#             )
+            
+#             with gr.Row():
+#                 msg = gr.Textbox(
+#                     placeholder="Ask a question...",
+#                     show_label=False,
+#                     scale=4
+#                 )
+#                 submit_btn = gr.Button("Send", variant="primary", scale=1)
+
+#             microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
+
+#         # RIGHT COLUMN
+#         with gr.Column(scale=2):
+#             gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
+            
+#             faq_1 = gr.Button("How can I reduce plastic waste?")
+#             faq_2 = gr.Button("How can I save energy at home?")
+#             faq_3 = gr.Button("What food scraps can I compost at home?")
+#             faq_4 = gr.Button("How do I safely dispose of e-waste?")
+#             faq_5 = gr.Button("What habits help reduce food waste?")
+#             faq_6 = gr.Button("What daily habits help conserve water?")
+#             faq_7 = gr.Button("How can I make my daily commute greener?")
+#             faq_8 = gr.Button("How can I shop for clothes sustainably?")
 
 
 
-    # Typing text or clicking send button
-    msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
-    submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
+#     # Typing text or clicking send button
+#     msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
+#     submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
 
-    # Voice message
-    microphone.change(voice_chat, inputs=[microphone, chatbot], outputs=[chatbot, chatbot])
+#     # Voice message
+#     microphone.change(voice_chat, inputs=[microphone, chatbot], outputs=[chatbot, chatbot])
 
-    # Right-side FAQ button clicks
-    faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
-    for btn in faq_buttons:
-        btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
+#     # Right-side FAQ button clicks
+#     faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
+#     for btn in faq_buttons:
+#         btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
 
-demo.launch()
+# demo.launch()
 
 # with gr.Blocks() as demo:
 
