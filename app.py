@@ -177,7 +177,7 @@ print(top_results)
 # HF_TOKEN secret in the Space's Settings tab for this to work
 # (Settings -> Variables and secrets -> New secret).
 
-client = InferenceClient("Qwen/Qwen2.5-7B-Instruct")
+client = InferenceClient("Qwen/Qwen2.5-7B-Instruct", bill_to="kode-with-klossy")
 
 
 def respond(message, history):
