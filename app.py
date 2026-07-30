@@ -273,7 +273,7 @@ def transcribe(audio_file):
     into text.
     """
 
-    segments, info = whisper_model.transcribe(
+    segments, info = WhisperModel.transcribe(
         audio_file
     )
 
@@ -403,12 +403,15 @@ with gr.Blocks(css=my_custom_css) as demo:
                     # Create microphone button
                     microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
                     mic_button = gr.Button("🎤 Send Voice")
-                    output = gr.Textbox(label="Response")
                     mic_button.click(
                         fn=voice_chat,
-                        inputs=microphone,
-                        outputs=output
+                        inputs=[
+                            audio,
+                            chat.chatbot_state
+                        ],
+                        outputs=chat.chatbot
                     )
+
 
             
                 with gr.Column(scale=2):
