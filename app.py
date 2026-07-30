@@ -342,12 +342,12 @@ def text_chat(message, history):
 
     return history, history, ""
 
+with gr.Blocks(css=my_custom_css) as demo:
 
-with gr.Blocks() as demo:
-
+    # Header section
     gr.HTML("""
     <center>
-    <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png">
+    <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png" width="180">
     <h1>GreenLAKES</h1>
     <p>
     Educating users about pollution and providing strategies
@@ -356,86 +356,86 @@ with gr.Blocks() as demo:
     </center>
     """)
 
-    gr.Markdown("""
-## 🌱 GreenLAKES
-Ask questions about:
-♻️ Plastic Pollution
-💨 Air Pollution
-🖥️ E-Waste
-🌎 Climate Change
-🏡 Sustainable Habits
-""")
+    # Main side-by-side layout
+    with gr.Row():
+        
+        # LEFT COLUMN: Chatbot & Input
+        with gr.Column(scale=3):
+            chatbot = gr.Chatbot(
+                value=[{
+                    "role": "assistant",
+                    "content": "Hello! I am GreenLAKES. How can I help you today with questions about pollution, recycling, or sustainability?"
+                }],
+                height=520
+            )
+            
+            with gr.Row():
+                msg = gr.Textbox(
+                    placeholder="Ask a question...",
+                    show_label=False,
+                    scale=4
+                )
+                submit_btn = gr.Button("Send", variant="primary", scale=1)
 
-    gr.HTML("""
-    <div style="text-align:center">
-    <h3>
-    Explore ways to reduce your environmental impact:
-    </h3>
-    </div>
-    """)
+            microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
 
-    # Interactive ChatInterface with clickable FAQ buttons
-    gr.ChatInterface(
-        fn=respond,
-        examples=[
-            "How can I reduce plastic waste?",
-            "What is e-waste?",
-            "How does pollution affect the environment?",
-            "Why is air pollution harmful?",
-            "What actions can I take to help the environment?"
-        ]
-    )
+        # RIGHT COLUMN: Frequently Asked Questions Buttons
+        with gr.Column(scale=2):
+            gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
+            
+            faq_1 = gr.Button("How can I reduce plastic waste?")
+            faq_2 = gr.Button("How can I save energy at home?")
+            faq_3 = gr.Button("What food scraps can I compost at home?")
+            faq_4 = gr.Button("How do I safely dispose of e-waste?")
+            faq_5 = gr.Button("What habits help reduce food waste?")
+            faq_6 = gr.Button("What daily habits help conserve water?")
+            faq_7 = gr.Button("How can I make my daily commute greener?")
+            faq_8 = gr.Button("How can I shop for clothes sustainably?")
 
-    # VOICE CHAT BOX
-    microphone = gr.Audio(
-        sources=["microphone"],
-        type="filepath"
-    )
+    # EVENT HANDLERS
 
-demo.launch(css=my_custom_css)
+    # Typing text or clicking send button
+    msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
+    submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
 
+    # Voice message
+    microphone.change(voice_chat, inputs=[microphone, chatbot], outputs=[chatbot, chatbot])
+
+    # Right-side FAQ button clicks
+    faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
+    for btn in faq_buttons:
+        btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
+
+demo.launch()
 
 # with gr.Blocks() as demo:
 
 #     gr.HTML("""
 #     <center>
-
-#     <img src="logo.png" width="180">
-
+#     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png">
 #     <h1>GreenLAKES</h1>
-
 #     <p>
 #     Educating users about pollution and providing strategies
 #     for sustainable action in their communities.
 #     </p>
-
 #     </center>
 #     """)
 
 #     gr.Markdown("""
 # ## 🌱 GreenLAKES
-
 # Ask questions about:
-
 # ♻️ Plastic Pollution
-
 # 💨 Air Pollution
-
 # 🖥️ E-Waste
-
 # 🌎 Climate Change
-
 # 🏡 Sustainable Habits
-
 # """)
 
 #     gr.HTML("""
 #     <div style="text-align:center">
-
 #     <h3>
 #     Explore ways to reduce your environmental impact:
 #     </h3>
-
 #     </div>
 #     """)
 
@@ -443,11 +443,11 @@ demo.launch(css=my_custom_css)
 #     gr.ChatInterface(
 #         fn=respond,
 #         examples=[
-#             "What can GreenLAKES help me with?",
-#             "How can I properly recycle a plastic bottle?",
-#             "What actions can I take today to reduce my waste at home?",
-#             "How do I safely dispose of old electronics and e-waste?",
-#             "Why is air pollution harmful to my health and the environment?"
+#             "How can I reduce plastic waste?",
+#             "What is e-waste?",
+#             "How does pollution affect the environment?",
+#             "Why is air pollution harmful?",
+#             "What actions can I take to help the environment?"
 #         ]
 #     )
 
@@ -459,82 +459,3 @@ demo.launch(css=my_custom_css)
 
 # demo.launch(css=my_custom_css)
 
-
-# with gr.Blocks() as demo:
-
-#     gr.HTML("""
-#     <center>
-
-#     <img src="logo.png" width="180">
-
-#     <h1>GreenLAKES</h1>
-
-#     <p>
-#     Educating users about pollution and providing strategies
-#     for sustainable action in their communities.
-#     </p>
-
-#     </center>
-#     """)
-
-
-#     gr.Markdown("""
-# ## 🌱 GreenLAKES
-
-# Ask questions about:
-
-# ♻️ Plastic Pollution
-
-# 💨 Air Pollution
-
-# 🖥️ E-Waste
-
-# 🌎 Climate Change
-
-# 🏡 Sustainable Habits
-
-# """)
-
-
-
-#     gr.HTML("""
-#     <div style="text-align:center">
-
-#     <h3>
-#     Explore ways to reduce your environmental impact:
-#     </h3>
-
-#     </div>
-#     """)
-
-
-#     gr.ChatInterface(
-#         fn=respond
-#     )
-
-#     # VOICE CHAT BOX
-#     microphone = gr.Audio(
-#         sources=["microphone"],
-#         type="filepath"
-#     )
-
-#     gr.Markdown("""
-#     ### Try asking:
-
-#     How can I reduce plastic waste?
-
-#     What is e-waste?
-
-#     How does pollution affect the environment?
-
-#     Why is air pollution harmful?
-
-#     What actions can I take to help the environment?
-
-# """)
-
-#     demo.launch(css=my_custom_css)
-
-
-# TODO: This is just a starting point! Customize the system prompt,
-# the model, and the interface to make this project your own!
