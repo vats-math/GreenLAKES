@@ -361,6 +361,14 @@ def calculate_impact(plastic_bottles, shower_mins):
     bottles_saved_year = plastic_bottles * 52
     water_saved_year = shower_mins * 2.5 * 365
 
+    return f"""
+    ###  Your Estimated Annual Impact:
+    * 🧋 **Single-Use Bottles Saved:** ~**{bottles_saved_year:,}** plastic bottles / year
+    * 💧 **Water Saved:** ~**{water_saved_year:,.0f}** gallons of water / year
+    
+    *Every small daily habit adds up to massive environmental change!*
+    """
+
 
 with gr.Blocks(css=my_custom_css) as demo:
 
