@@ -429,7 +429,6 @@ with gr.Blocks(css=my_custom_css) as demo:
             gr.Markdown("### 🎲 Get a Quick Eco-Friendly Habit Tip")
             gr.Markdown("Click the button below to generate a simple, actionable eco-tip you can try today!")
             
-            tip_display = gr.Markdown("👉 *Click 'Generate Eco-Tip' to get started!*")
             generate_tip_btn = gr.Button("Generate Eco-Tip 🎲", variant="primary")
 
     
