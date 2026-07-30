@@ -286,37 +286,33 @@ def transcribe(audio_file):
 
     return text.strip()
 
-def voice_chat(audio_file, history):
-    """
-    Handles microphone input.
-    """
+def voice_chat(audio, history):
+    print("Audio received:", audio)
 
-    # Audio -> text
-    user_message = transcribe(
-        audio_file
-    )
+    if audio is None:
+        return history
 
+    # Convert speech to text
+    user_text = transcribe(audio)
 
-    # Text -> chatbot
-    answer = respond(
-        user_message,
-        history
-    )
+    print("Transcribed:", user_text)
 
-    # Update conversation
-    history = history + [
-        {
-            "role": "user",
-            "content": user_message
-        },
-        {
-            "role": "assistant",
-            "content": answer
-        }
-    ]
+    # Get chatbot response
+    response = respond(user_text, history)
 
+    # Add message to chat history
+    history.append({
+        "role": "user",
+        "content": user_text
+    })
 
-    return history, history
+    history.append({
+        "role": "assistant",
+        "content": response
+    })
+
+    return history
+
 
 def text_chat(message, history):
     """
@@ -424,16 +420,17 @@ with gr.Blocks(css=my_custom_css) as demo:
             msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
             submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
             
+
+            faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
+            for btn in faq_buttons:
+                btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
+
             #VOICE CHAT
             mic_button.click(
                 voice_chat,
                 inputs=[microphone, chatbot],
                 outputs=[chatbot, chatbot]
             )
-
-            faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
-            for btn in faq_buttons:
-                btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
 
         # random daily tios
         with gr.Tab("🌱 Daily Eco-Tip Generator"):
