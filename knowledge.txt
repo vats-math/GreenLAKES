@@ -383,4 +383,50 @@ decluttering cloud storage accounts, deleting unnecessary emails and large store
 definition is not required, and backing up data locally on physical hard drives rather than relying continuously on energy- and 
 bandwidth-intensive cloud data centers, thereby indirectly reducing overall bandwidth demands on global orbital and ground communication 
 networks.
+GreenLAKES Knowledge File: Trusted Resources
+1. Plastic Pollution
+URL: [https://www.unep.org/beatpollution/](https://www.unep.org/beatpollution/)
+Source: United Nations Environment Programme (UNEP)
+Summary: Overview of global plastic, air, and chemical waste reduction initiatives.
+When to provide: When users ask about global efforts against plastic pollution or practical solutions to eliminate single-use plastics.
+URL: [https://www.epa.gov/trash-free-waters/escaped-trash-risk-map](https://www.epa.gov/trash-free-waters/escaped-trash-risk-map)
+Source: US Environmental Protection Agency (EPA)
+Summary: Data and tools on escaped trash, microplastics, and how marine debris impacts waterways.
+When to provide: When users ask about littering, plastic runoff into lakes or ocean systems, and aquatic debris.
+2. Air Pollution
+URL: [https://www.who.int/data/gho/data/themes/air-pollution](https://www.who.int/data/gho/data/themes/air-pollution)
+Source: World Health Organization (WHO)
+Summary: Official data on outdoor and indoor air quality, particulate matter exposure, and health risks.
+When to provide: When users ask why air pollution is harmful or how ambient air affects human health.
+URL: [https://www.niehs.nih.gov/health/topics/agents/air-pollution](https://www.niehs.nih.gov/health/topics/agents/air-pollution)
+Source: National Institute of Environmental Health Sciences (NIEHS)
+Summary: Clear explanations of airborne pollutants (smog, ozone, PM2.5) and lung/cardiovascular health effects.
+When to provide: When users ask about specific respiratory risks or common types of air pollutants.
+3. E-Waste
+URL: [https://www.who.int/news-room/fact-sheets/detail/electronic-waste-(e-waste](https://www.who.int/news-room/fact-sheets/detail/electronic-waste-(e-waste))
+Source: World Health Organization (WHO)
+Summary: Global fact sheet detailing toxic components in e-waste (like lead and mercury) and health hazards.
+When to provide: When users ask "What is e-waste?" or how toxic metals in electronics harm human bodies.
+URL: [https://www.epa.gov/recycle/electronics-donation-and-recycling](https://www.epa.gov/recycle/electronics-donation-and-recycling)
+Source: US Environmental Protection Agency (EPA)
+Summary: Step-by-step instructions on wiping data, donating, or finding certified electronics recyclers.
+When to provide: When users ask how to properly dispose of, recycle, or donate old phones, laptops, and appliances.
+4. Climate Change
+URL: [https://www.un.org/en/climatechange/what-is-climate-change](https://www.un.org/en/climatechange/what-is-climate-change)
+Source: United Nations Climate Action
+Summary: Foundational primer explaining greenhouse gases, rising temperatures, extreme weather, and global targets.
+When to provide: When users ask general questions about global warming, fossil fuels, or climate change causes.
+URL: [https://www.un.org/en/climatechange/science/key-findings](https://www.un.org/en/climatechange/science/key-findings)
+Source: United Nations (UN Science Findings)
+Summary: Scientific summaries on global heating trends and critical actions to limit global temperature rises.
+When to provide: When users ask for facts, statistics, or scientific consensus on climate impact.
+5. Sustainable Habits
+URL: [https://www.un.org/en/actnow](https://www.un.org/en/actnow)
+Source: United Nations (ActNow Campaign)
+Summary: 10 actionable daily habits to save energy, reduce food waste, choose eco-friendly transport, and lower personal carbon footprints.
+When to provide: When users ask for practical ways to live sustainably, lower home energy use, or reduce daily waste.
+URL: [https://www.epa.gov/electronics-batteries-management/electronics-basic-information-research-and-initiatives](https://www.epa.gov/electronics-batteries-management/electronics-basic-information-research-and-initiatives)
+Source: US Environmental Protection Agency (EPA)
+Summary: Guidelines on circular economy practices, sustainable purchasing, and battery management.
+When to provide: When users ask how community choices and sustainable consumption reduce total waste.
 
