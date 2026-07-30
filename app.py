@@ -425,7 +425,7 @@ with gr.Blocks(css=my_custom_css) as demo:
             submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
             
             #VOICE CHAT
-             mic_button.click(
+            mic_button.click(
                 voice_chat,
                 inputs=[microphone, chatbot],
                 outputs=[chatbot, chatbot]
