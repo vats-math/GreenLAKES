@@ -521,8 +521,8 @@ with gr.Blocks(css=my_custom_css) as demo:
             with gr.Row():
                 with gr.Column(scale=1):
                     location_input = gr.Textbox(
-                        label="Your City or ZIP Code",
-                        placeholder="e.g. 90210 or Chicago"
+                        label="Your City and Country",
+                        placeholder="e.g. Warsaw Poland"
                     )
                     category_input = gr.Radio(
                         choices=[
