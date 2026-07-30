@@ -394,15 +394,16 @@ with gr.Blocks(css=my_custom_css) as demo:
                             show_label=False,
                             scale=4
                         )
-                        submit_btn = gr.Button("Send", variant="primary", scale=1)
+                        submit_btn = gr.Button("Send Text", variant="primary", scale=1)
       
                         # CREATE MIC BUTTON
                         microphone = gr.Audio(
                             sources=["microphone"],
                             type="filepath",
-                            label="Voice Input"
+                            label="None",
+                            scale=1
                         )
-                        mic_button = gr.Button("🎤 Send Voice")
+                        mic_button = gr.Button("🎤 Send Voice", scale=1)
             
                 with gr.Column(scale=2):
                     gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
