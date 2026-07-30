@@ -359,7 +359,7 @@ with gr.Blocks(css=my_custom_css) as demo:
     # Main side-by-side layout
     with gr.Row():
         
-        # LEFT COLUMN: Chatbot & Input
+        # LEFT COLUMN
         with gr.Column(scale=3):
             chatbot = gr.Chatbot(
                 value=[{
@@ -379,7 +379,7 @@ with gr.Blocks(css=my_custom_css) as demo:
 
             microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
 
-        # RIGHT COLUMN: Frequently Asked Questions Buttons
+        # RIGHT COLUMN
         with gr.Column(scale=2):
             gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
             
@@ -392,7 +392,7 @@ with gr.Blocks(css=my_custom_css) as demo:
             faq_7 = gr.Button("How can I make my daily commute greener?")
             faq_8 = gr.Button("How can I shop for clothes sustainably?")
 
-    # EVENT HANDLERS
+
 
     # Typing text or clicking send button
     msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
