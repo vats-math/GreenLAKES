@@ -400,7 +400,15 @@ with gr.Blocks(css=my_custom_css) as demo:
                         )
                         submit_btn = gr.Button("Send", variant="primary", scale=1)
 
+                    # Create microphone button
                     microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
+                    mic_button = gr.Button("🎤 Send Voice")
+                    output = gr.Textbox(label="Response")
+                    mic_button.click(
+                        fn=voice_chat,
+                        inputs=microphone,
+                        outputs=output
+                    )
 
             
                 with gr.Column(scale=2):
