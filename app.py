@@ -369,67 +369,33 @@ def calculate_impact(plastic_bottles, shower_mins):
     *Every small daily habit adds up to massive environmental change!*
     """
 
-# Database of local eco-resources
-
-ECO_DATABASE = {
-    "e-waste": {
-        "title": "E-Waste and Electronics Disposal",
-        "guidelines": "Do NOT place electronics in regular household recycling or trash bins due to heavy metals and fire hazards.",
-        "centers": [
-            "Best Buy / Staples: Accepts laptops, phones, cables, and small appliances free of charge.",
-            "City Municipal Household Hazardous Waste (HHW) Center: Accepts large electronics, monitors, and TVs.",
-            "Call2Recycle Drop-offs: Located at most hardware stores for rechargeable batteries."
-        ]
-    },
-    "compost": {
-        "title": "Organic and Compost Drop-offs",
-        "guidelines": "Accepts fruit/vegetable scraps, coffee grounds, eggshells, and yard waste. Avoid meat/dairy unless specified by your local facility.",
-        "centers": [
-            "Community Gardens and Farmers Markets: Many local markets host weekly residential scrap collections.",
-            "City Yard Waste Facility: Check your municipality website for curbside pickup schedules or drop-off sites.",
-            "ShareWaste Network: Connects people with neighborhood compost bins via the ShareWaste app."
-        ]
-    },
-    "hazmat": {
-        "title": "Household Hazardous Waste (Batteries, Paint, Chemicals)",
-        "guidelines": "Must be handed over in sealed containers. Never pour down drains or throw in regular bins.",
-        "centers": [
-            "County HHW Facility: Accepts oil-based paints, pesticides, motor oil, and fluorescent bulbs.",
-            "PaintCare Locations: Local hardware and paint stores often take back leftover architectural paint."
-        ]
-    },
-    "plastics": {
-        "title": "Plastic and Glass Packaging",
-        "guidelines": "Rinse containers clean of food residue before recycling. Rigid plastics #1 and #2 are universally accepted curbside.",
-        "centers": [
-            "Curbside Blue Bin: Suitable for clean plastic bottles, jugs, glass jars, and metal cans.",
-            "Grocery Store Plastic Bag Recycling: Take thin film plastic (grocery bags, bubble wrap) back to store entrance bins."
-        ]
-    }
-}
-
 def find_local_resources(location, category):
-    loc_str = f" for {location.strip()}" if location and location.strip() else ""
+    category_names = {
+        "e-waste": "E-Waste and Electronics (laptops, phones, batteries)",
+        "compost": "Organic scrap and composting facilities",
+        "hazmat": "Household Hazardous Waste (paint, chemicals, oil)",
+        "plastics": "Plastics and household recycling bins"
+    }
     
-    data = ECO_DATABASE.get(category)
-    if not data:
-        return "Please select an item category to search."
+    cat_label = category_names.get(category, category)
+    loc_text = location.strip() if location and location.strip() else "general municipal areas"
 
-    centers_formatted = "\n".join([f"- {c}" for c in data["centers"]])
+    prompt = f"""
+    You are an environmental assistant. The user is asking where to dispose of {cat_label} in or near: {loc_text}.
     
-    return f"""
-    ### {data['title']}{loc_str}
-    
-    **Disposal Guidelines:**  
-    {data['guidelines']}
-    
-    ---
-    
-    **Recommended Drop-Off Options & Resources:**  
-    {centers_formatted}
-    
-    *Pro Tip: Always call or check local facility websites before visiting to confirm operating hours and accepted materials.*
+    Provide specific, helpful guidance for {loc_text}:
+    1. **Disposal Guidelines**: 2 short rules on how to prepare these materials.
+    2. **Recommended Local Drop-Off Centers**: List 3 specific local options, drop-off hubs, or major retailer programs available in or near {loc_text}.
+    3. **Pro Tip**: One actionable safety or efficiency tip.
+
+    Do not use emojis. Keep the formatting clean with bold text and bullet points.
     """
+
+    response = client.chat_completion(
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return response.choices[0].message.content.strip()
 
 
 with gr.Blocks(css=my_custom_css) as demo:
@@ -555,7 +521,7 @@ with gr.Blocks(css=my_custom_css) as demo:
             with gr.Row():
                 with gr.Column(scale=1):
                     location_input = gr.Textbox(
-                        label="Your City or ZIP Code (Optional)",
+                        label="Your City or ZIP Code",
                         placeholder="e.g. 90210 or Chicago"
                     )
                     category_input = gr.Radio(
