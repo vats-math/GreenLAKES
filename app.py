@@ -273,7 +273,7 @@ def transcribe(audio_file):
     into text.
     """
 
-    segments, info = WhisperModel.transcribe(
+    segments, info = whisper.transcribe(
         audio_file
     )
 
@@ -429,7 +429,7 @@ with gr.Blocks(css=my_custom_css) as demo:
             mic_button.click(
                 voice_chat,
                 inputs=[microphone, chatbot],
-                outputs=[chatbot, chatbot]
+                outputs=[chatbot]
             )
 
         # random daily tios
