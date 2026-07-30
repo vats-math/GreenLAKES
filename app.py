@@ -179,7 +179,6 @@ print(top_results)
 
 client = InferenceClient("Qwen/Qwen2.5-7B-Instruct")
 
-
 def respond(message, history):
 
     rag_info = get_top_chunks(message, chunk_embeddings, cleaned_chunks)
@@ -195,6 +194,10 @@ def respond(message, history):
 
     Give helpful and clear answers.
     Encourage users that individual actions can contribute to larger environmental change.
+
+    RULE FOR LINKS:
+    Provide a clear, helpful answer first. Then, if a relevant trusted link exists in the provided Information, end your response with:
+    "🔗 Learn more: [Source Title](URL)"
 
     Information:
     {rag_info}
@@ -212,6 +215,38 @@ def respond(message, history):
     )
 
     return response.choices[0].message.content.strip()
+# def respond(message, history):
+
+#     rag_info = get_top_chunks(message, chunk_embeddings, cleaned_chunks)
+#     system_message = f"""
+#     You are GreenLAKES, an environmental chatbot.
+
+#     Use the provided information to answer questions about:
+#     - pollution
+#     - sustainability
+#     - recycling
+#     - climate issues
+#     - local environmental actions
+
+#     Give helpful and clear answers.
+#     Encourage users that individual actions can contribute to larger environmental change.
+
+#     Information:
+#     {rag_info}
+#     """
+    
+#     messages = [{"role": "system", "content": system_message}]
+
+#     if history:
+#         messages.extend(history)
+
+#     messages.append({"role": "user", "content": message})
+
+#     response = client.chat_completion(
+#         messages,
+#     )
+
+#     return response.choices[0].message.content.strip()
 
 
 # VOICE CHAT
