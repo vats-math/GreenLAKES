@@ -6,10 +6,27 @@ import torch
 
 # COLORS FIRST
 my_custom_css = """
-/* Background */
-body, gradio-app, .main, .gradio-container {
-    background: linear-gradient(180deg, #EAF7E5, #D8F3DC);
-    font-family: Arial, Helvetica, sans-serif;
+/* Light theme */
+[data-theme="light"] {
+    --bg: white;
+    --text: #222;
+    --card: #f5f5f5;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: white;
+    --card: #1e1e1e;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.card {
+    background: var(--card);
 }
 
 /* Main container */
