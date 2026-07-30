@@ -369,6 +369,68 @@ def calculate_impact(plastic_bottles, shower_mins):
     *Every small daily habit adds up to massive environmental change!*
     """
 
+# Database of local eco-resources
+
+ECO_DATABASE = {
+    "e-waste": {
+        "title": "E-Waste and Electronics Disposal",
+        "guidelines": "Do NOT place electronics in regular household recycling or trash bins due to heavy metals and fire hazards.",
+        "centers": [
+            "Best Buy / Staples: Accepts laptops, phones, cables, and small appliances free of charge.",
+            "City Municipal Household Hazardous Waste (HHW) Center: Accepts large electronics, monitors, and TVs.",
+            "Call2Recycle Drop-offs: Located at most hardware stores for rechargeable batteries."
+        ]
+    },
+    "compost": {
+        "title": "Organic and Compost Drop-offs",
+        "guidelines": "Accepts fruit/vegetable scraps, coffee grounds, eggshells, and yard waste. Avoid meat/dairy unless specified by your local facility.",
+        "centers": [
+            "Community Gardens and Farmers Markets: Many local markets host weekly residential scrap collections.",
+            "City Yard Waste Facility: Check your municipality website for curbside pickup schedules or drop-off sites.",
+            "ShareWaste Network: Connects people with neighborhood compost bins via the ShareWaste app."
+        ]
+    },
+    "hazmat": {
+        "title": "Household Hazardous Waste (Batteries, Paint, Chemicals)",
+        "guidelines": "Must be handed over in sealed containers. Never pour down drains or throw in regular bins.",
+        "centers": [
+            "County HHW Facility: Accepts oil-based paints, pesticides, motor oil, and fluorescent bulbs.",
+            "PaintCare Locations: Local hardware and paint stores often take back leftover architectural paint."
+        ]
+    },
+    "plastics": {
+        "title": "Plastic and Glass Packaging",
+        "guidelines": "Rinse containers clean of food residue before recycling. Rigid plastics #1 and #2 are universally accepted curbside.",
+        "centers": [
+            "Curbside Blue Bin: Suitable for clean plastic bottles, jugs, glass jars, and metal cans.",
+            "Grocery Store Plastic Bag Recycling: Take thin film plastic (grocery bags, bubble wrap) back to store entrance bins."
+        ]
+    }
+}
+
+def find_local_resources(location, category):
+    loc_str = f" for {location.strip()}" if location and location.strip() else ""
+    
+    data = ECO_DATABASE.get(category)
+    if not data:
+        return "Please select an item category to search."
+
+    centers_formatted = "\n".join([f"- {c}" for c in data["centers"]])
+    
+    return f"""
+    ### {data['title']}{loc_str}
+    
+    **Disposal Guidelines:**  
+    {data['guidelines']}
+    
+    ---
+    
+    **Recommended Drop-Off Options & Resources:**  
+    {centers_formatted}
+    
+    *Pro Tip: Always call or check local facility websites before visiting to confirm operating hours and accepted materials.*
+    """
+
 
 with gr.Blocks(css=my_custom_css) as demo:
 
@@ -447,7 +509,7 @@ with gr.Blocks(css=my_custom_css) as demo:
                 outputs=[chatbot]
             )
 
-        # random daily tios
+        # tab 2 random daily tips
         with gr.Tab("🌱 Daily Eco-Tip Generator"):
             gr.Markdown("### 🎲 Get a Quick Eco-Friendly Habit Tip")
             gr.Markdown("Click the button below to generate a simple, actionable eco-tip you can try today!")
@@ -458,7 +520,7 @@ with gr.Blocks(css=my_custom_css) as demo:
     
             generate_tip_btn.click(get_random_tip, outputs=tip_display)
 
-        #impact tab
+        #tab 3 impact tab
 
         with gr.Tab("📊 Impact Calculator"):
             gr.Markdown("### Personal Impact Calculator")
@@ -485,122 +547,37 @@ with gr.Blocks(css=my_custom_css) as demo:
                 outputs=results_display
             )
 
+        # tab 4 local recycling 
+        with gr.Tab("🏠 Local Eco-Finder"):
+            gr.Markdown("### Local Recycling & Disposal Finder")
+            gr.Markdown("Find out where to safely dispose of specialized waste like electronics, hazardous items, or compost in your community.")
+            
+            with gr.Row():
+                with gr.Column(scale=1):
+                    location_input = gr.Textbox(
+                        label="Your City or ZIP Code (Optional)",
+                        placeholder="e.g. 90210 or Chicago"
+                    )
+                    category_input = gr.Radio(
+                        choices=[
+                            ("E-Waste (Phones, Laptops, Batteries)", "e-waste"),
+                            ("Food Scraps & Compost", "compost"),
+                            ("Hazardous Waste (Paint, Chemicals)", "hazmat"),
+                            ("Plastics, Glass & Household Recyclables", "plastics")
+                        ],
+                        value="e-waste",
+                        label="What item do you need to dispose of?"
+                    )
+                    search_btn = gr.Button("Find Local Guidance", variant="primary")
+                
+                with gr.Column(scale=2):
+                    finder_output = gr.Markdown("Select a category and click **Find Local Guidance** to view instructions and drop-off hubs.")
+
+            search_btn.click(
+                find_local_resources,
+                inputs=[location_input, category_input],
+                outputs=finder_output
+            )
+
 demo.launch(css=my_custom_css)
-
-# with gr.Blocks(css=my_custom_css) as demo:
-
-#     # Header section
-#     gr.HTML("""
-#     <center>
-#     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png" width="180">
-#     <h1>GreenLAKES</h1>
-#     <p>
-#     Educating users about pollution and providing strategies
-#     for sustainable action in their communities.
-#     </p>
-#     </center>
-#     """)
-
-#     # Main side-by-side layout
-#     with gr.Row():
-        
-#         # LEFT COLUMN
-#         with gr.Column(scale=3):
-#             chatbot = gr.Chatbot(
-#                 value=[{
-#                     "role": "assistant",
-#                     "content": "Hello! I am GreenLAKES. How can I help you today with questions about pollution, recycling, or sustainability?"
-#                 }],
-#                 height=520
-#             )
-            
-#             with gr.Row():
-#                 msg = gr.Textbox(
-#                     placeholder="Ask a question...",
-#                     show_label=False,
-#                     scale=4
-#                 )
-#                 submit_btn = gr.Button("Send", variant="primary", scale=1)
-
-#             microphone = gr.Audio(sources=["microphone"], type="filepath", label="Voice Chat")
-
-#         # RIGHT COLUMN
-#         with gr.Column(scale=2):
-#             gr.Markdown("### 🌿 Daily Eco-Habits & FAQs")
-            
-#             faq_1 = gr.Button("How can I reduce plastic waste?")
-#             faq_2 = gr.Button("How can I save energy at home?")
-#             faq_3 = gr.Button("What food scraps can I compost at home?")
-#             faq_4 = gr.Button("How do I safely dispose of e-waste?")
-#             faq_5 = gr.Button("What habits help reduce food waste?")
-#             faq_6 = gr.Button("What daily habits help conserve water?")
-#             faq_7 = gr.Button("How can I make my daily commute greener?")
-#             faq_8 = gr.Button("How can I shop for clothes sustainably?")
-
-
-
-#     # Typing text or clicking send button
-#     msg.submit(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
-#     submit_btn.click(text_chat, inputs=[msg, chatbot], outputs=[chatbot, chatbot, msg])
-
-#     # Voice message
-#     microphone.change(voice_chat, inputs=[microphone, chatbot], outputs=[chatbot, chatbot])
-
-#     # Right-side FAQ button clicks
-#     faq_buttons = [faq_1, faq_2, faq_3, faq_4, faq_5, faq_6, faq_7, faq_8]
-#     for btn in faq_buttons:
-#         btn.click(text_chat, inputs=[btn, chatbot], outputs=[chatbot, chatbot, msg])
-
-# demo.launch()
-
-# with gr.Blocks() as demo:
-
-#     gr.HTML("""
-#     <center>
-#     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png">
-#     <h1>GreenLAKES</h1>
-#     <p>
-#     Educating users about pollution and providing strategies
-#     for sustainable action in their communities.
-#     </p>
-#     </center>
-#     """)
-
-#     gr.Markdown("""
-# ## 🌱 GreenLAKES
-# Ask questions about:
-# ♻️ Plastic Pollution
-# 💨 Air Pollution
-# 🖥️ E-Waste
-# 🌎 Climate Change
-# 🏡 Sustainable Habits
-# """)
-
-#     gr.HTML("""
-#     <div style="text-align:center">
-#     <h3>
-#     Explore ways to reduce your environmental impact:
-#     </h3>
-#     </div>
-#     """)
-
-#     # Interactive ChatInterface with clickable FAQ buttons
-#     gr.ChatInterface(
-#         fn=respond,
-#         examples=[
-#             "How can I reduce plastic waste?",
-#             "What is e-waste?",
-#             "How does pollution affect the environment?",
-#             "Why is air pollution harmful?",
-#             "What actions can I take to help the environment?"
-#         ]
-#     )
-
-#     # VOICE CHAT BOX
-#     microphone = gr.Audio(
-#         sources=["microphone"],
-#         type="filepath"
-#     )
-
-# demo.launch(css=my_custom_css)
 
