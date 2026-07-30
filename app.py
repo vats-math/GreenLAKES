@@ -205,13 +205,18 @@ def respond(message, history):
     
     messages = [{"role": "system", "content": system_message}]
 
+
     if history:
-        messages.extend(history)
+        for msg in history:
+            messages.append(msg)
 
     messages.append({"role": "user", "content": message})
 
+
     response = client.chat_completion(
-        messages,
+        messages=messages,
+        model="Qwen/Qwen2.5-7B-Instruct",
+        max_tokens=500
     )
 
     return response.choices[0].message.content.strip()
