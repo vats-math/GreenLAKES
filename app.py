@@ -9,16 +9,16 @@ import torch
 my_custom_css = """
 /* Light theme */
 [data-theme="light"] {
-    --bg: white;
-    --text: #222;
-    --card: #f5f5f5;
+    --bg: #DDEFD0;
+    --text: #173B2D;
+    --card: rgba(255,255,255,.88);
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-    --bg: #121212;
-    --text: white;
-    --card: #1e1e1e;
+    --bg: #143322;
+    --text: #EAF7E5;
+    --card: rgba(20,50,35,.88);
 }
 
 body {
