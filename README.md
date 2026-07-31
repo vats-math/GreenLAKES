@@ -6,7 +6,7 @@ This chatbot is intended to gives you simple and location-based solutions to com
 
 > ⚠️ Note: This Space is no longer live. The code in this repo is the full project.
 
-(<img width="783" height="657" alt="image" src="https://github.com/user-attachments/assets/95299db5-657e-4cf2-a25e-5aea4b00f192" />)
+<img width="783" height="657" alt="image" src="https://github.com/user-attachments/assets/95299db5-657e-4cf2-a25e-5aea4b00f192" />
 
 ## What it does
 
