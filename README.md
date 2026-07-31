@@ -1,4 +1,4 @@
-# [GreenLAKES]
+# GreenLAKES
 
 This chatbot is intended to gives you simple and location-based solutions to combat pollution and helps you learn more about protecting the environment!
 
