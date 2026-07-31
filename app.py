@@ -66,7 +66,7 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
 
-    opacity: 0.20;
+    opacity: 0.14;
 
     pointer-events: none;
 
