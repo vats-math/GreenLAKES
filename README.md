@@ -1,6 +1,6 @@
 # [GreenLAKES]
 
-[This chatbot is intended to gives you simple and location-based solutions to combat pollution and helps you learn more about protecting the environment!]
+This chatbot is intended to gives you simple and location-based solutions to combat pollution and helps you learn more about protecting the environment!
 
 🤗 **Originally built as a Hugging Face Space:** [https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone]
 
