@@ -40,42 +40,39 @@ btn.textContent="🌚";
 
 # COLORS FIRST
 my_custom_css = """
-/* Light theme */
+/* Light theme (Semi-transparent green overlay) */
 :root, [data-theme="light"] {
-    --bg: #DDEFD0;
+    --bg: rgba(221, 239, 208, 0.75);
     --text: #173B2D;
-    --card: rgba(255,255,255,.88);
+    --card: rgba(255, 255, 255, 0.88);
 }
 
-/* Dark theme */
+/* Dark theme (Semi-transparent dark green overlay) */
 :root.dark, [data-theme="dark"] {
-    --bg: #143322;
+    --bg: rgba(20, 51, 34, 0.82);
     --text: #EAF7E5;
-    --card: rgba(20,50,35,.88);
+    --card: rgba(20, 50, 35, 0.88);
 }
 
+/* Background Image Setup */
 body::before {
     content: "";
-
     position: fixed;
     inset: 0;
-
     background-image: url("https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/jungle_background.png");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    opacity: 0.14;
-
+    opacity: 0.35; /* Increased slightly so leaves pop through */
     pointer-events: none;
-
     z-index: -1;
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .card {
@@ -176,6 +173,35 @@ h3{
 
 p{
     color:#264D35;
+}
+
+/* FORCE TRANSPARENCY & SHOW LEAF BACKGROUND */
+:root, [data-theme="light"] {
+    --bg: rgba(221, 239, 208, 0.75) !important;
+}
+
+:root.dark, [data-theme="dark"] {
+    --bg: rgba(20, 51, 34, 0.82) !important;
+}
+
+body {
+    background: var(--bg) !important;
+}
+
+/* Clear solid container overlays so body background stays visible */
+.gradio-container, .main, gradio-app, .dark body, .dark gradio-app, .dark .main, .dark .gradio-container {
+    background: transparent !important;
+}
+
+/* Ensure leaf image sits in front of standard base background */
+body::before {
+    opacity: 0.30 !important;
+    z-index: 0 !important;
+}
+
+.gradio-container {
+    position: relative !important;
+    z-index: 1 !important;
 }
 """
 # Load text to speech model
