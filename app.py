@@ -5,6 +5,39 @@ from huggingface_hub import InferenceClient
 from sentence_transformers import SentenceTransformer
 import torch
 
+gr.HTML("""
+<button id="theme-btn">🌝</button>
+
+<script>
+
+const btn=document.getElementById("theme-btn");
+
+const root=document.documentElement;
+
+btn.onclick=()=>{
+
+if(root.dataset.theme==="dark"){
+
+root.dataset.theme="light";
+
+btn.textContent="🌝";
+
+}
+
+else{
+
+root.dataset.theme="dark";
+
+btn.textContent="🌚";
+
+}
+
+};
+
+</script>
+""")
+
+
 # COLORS FIRST
 my_custom_css = """
 /* Light theme */
@@ -21,14 +54,51 @@ my_custom_css = """
     --card: rgba(20,50,35,.88);
 }
 
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image: url("https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/jungle_background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.14;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
 body {
     background: var(--bg);
     color: var(--text);
+    position: relative;
+    overflow-x: hidden;
 }
 
 .card {
     background: var(--card);
 }
+
+theme = gr.State("light")
+theme_btn = gr.Button("🌝", size="sm")
+def switch_theme(current):
+
+    if current == "light":
+
+        return (
+            "dark",
+            "🌚"
+        )
+
+    return (
+        "light",
+        "🌝"
+    )
 
 /* Main container */
 .gradio-container {
@@ -48,7 +118,8 @@ div[data-testid="user-message"]{
 /* Bot bubble */
 .bot-row .message,
 div[data-testid="bot-message"]{
-    background:white !important;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(5px);
     color:#173B2D !important;
     border-radius:18px !important;
     padding:14px !important;
@@ -84,7 +155,8 @@ button.primary:hover{
 
 /* Dark Bot Bubble */
 .dark .bot-row .message, .dark div[data-testid="bot-message"] {
-    background: #192D23 !important;
+    background:rgba(23,45,34,.82);
+    backdrop-filter:blur(5px);
     color: #E2F4DF !important;
     border: 2px solid #2D4D3D !important;
 }
