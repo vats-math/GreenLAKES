@@ -84,22 +84,6 @@ body {
     background: var(--card);
 }
 
-theme = gr.State("light")
-theme_btn = gr.Button("🌝", size="sm")
-def switch_theme(current):
-
-    if current == "light":
-
-        return (
-            "dark",
-            "🌚"
-        )
-
-    return (
-        "light",
-        "🌝"
-    )
-
 /* Main container */
 .gradio-container {
     max-width: 950px !important;
@@ -142,9 +126,9 @@ button.primary{
 button.primary:hover{
     background:#256D46 !important;
 }
-/* Dark Background */
+/* Dark Background (Semi-transparent so leaves remain visible) */
 .dark body, .dark gradio-app, .dark .main, .dark .gradio-container {
-    background: linear-gradient(180deg, #122119, #0B1510) !important;
+    background: rgba(18, 33, 25, 0.82) !important;
 }
 
 /* Dark User Bubble */
@@ -474,6 +458,17 @@ with gr.Blocks(css=my_custom_css) as demo:
 
 
     gr.HTML("""
+    <div style="position: absolute; top: 10px; right: 20px; z-index: 9999;">
+        <button id="theme-btn" style="font-size: 24px; background: transparent; border: none; cursor: pointer;">🌝</button>
+    </div>
+    <script>
+        const btn = document.getElementById("theme-btn");
+        btn.onclick = () => {
+            const isDark = document.documentElement.classList.toggle("dark");
+            document.documentElement.dataset.theme = isDark ? "dark" : "light";
+            btn.textContent = isDark ? "🌚" : "🌝";
+        };
+    </script>
     <center>
     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png" width="180">
     <h1>GreenLAKES</h1>
