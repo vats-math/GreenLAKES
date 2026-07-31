@@ -41,14 +41,14 @@ btn.textContent="🌚";
 # COLORS FIRST
 my_custom_css = """
 /* Light theme */
-[data-theme="light"] {
+:root, [data-theme="light"] {
     --bg: #DDEFD0;
     --text: #173B2D;
     --card: rgba(255,255,255,.88);
 }
 
 /* Dark theme */
-[data-theme="dark"] {
+:root.dark, [data-theme="dark"] {
     --bg: #143322;
     --text: #EAF7E5;
     --card: rgba(20,50,35,.88);
@@ -66,7 +66,7 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
 
-    opacity: 0.14;
+    opacity: 0.20;
 
     pointer-events: none;
 
@@ -76,8 +76,6 @@ body::before {
 body {
     background: var(--bg);
     color: var(--text);
-    position: relative;
-    overflow-x: hidden;
 }
 
 .card {
@@ -127,7 +125,7 @@ button.primary:hover{
     background:#256D46 !important;
 }
 /* Dark Background (Semi-transparent so leaves remain visible) */
-.dark body, .dark gradio-app, .dark .main, .dark .gradio-container {
+.dark body, .dark gradio-app {
     background: rgba(18, 33, 25, 0.82) !important;
 }
 
@@ -458,17 +456,17 @@ with gr.Blocks(css=my_custom_css) as demo:
 
 
     gr.HTML("""
-    <div style="position: absolute; top: 10px; right: 20px; z-index: 9999;">
-        <button id="theme-btn" style="font-size: 24px; background: transparent; border: none; cursor: pointer;">🌝</button>
+     <div style="position: absolute; top: 15px; right: 25px; z-index: 99999;">
+        <button id="theme-btn" 
+                onclick="
+                    const isDark = document.documentElement.classList.toggle('dark');
+                    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+                    this.textContent = isDark ? '🌚' : '🌝';
+                " 
+                style="font-size: 26px; background: transparent; border: none; cursor: pointer; outline: none;">
+            🌝
+        </button>
     </div>
-    <script>
-        const btn = document.getElementById("theme-btn");
-        btn.onclick = () => {
-            const isDark = document.documentElement.classList.toggle("dark");
-            document.documentElement.dataset.theme = isDark ? "dark" : "light";
-            btn.textContent = isDark ? "🌚" : "🌝";
-        };
-    </script>
     <center>
     <img src="https://huggingface.co/spaces/kode-with-klossy/3.3-groupD2-capstone/resolve/main/logo.png" alt="logo.png" width="180">
     <h1>GreenLAKES</h1>
